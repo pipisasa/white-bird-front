@@ -30,7 +30,7 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     >
       <div className={s.contact}>
         <h2>
-          <Image src={logo} width={100} height={100} alt='logo'/>
+          <Image src={logo} width={280} height={190} alt='logo'/>
         </h2>
         <div className={s.contact_desc}>
           <div>
