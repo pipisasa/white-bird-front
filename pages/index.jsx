@@ -13,10 +13,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
-      <Header />
       <Hero />
-      <Contact/>
-      <Footer/>
+      <Contact />
     </>
   );
 }

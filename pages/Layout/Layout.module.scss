@@ -1,0 +1,35 @@
+.loaderEnter {
+    opacity: 0;
+  }
+  
+  .loaderEnterActive {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  
+  .loaderExit {
+    opacity: 1;
+  }
+  
+  .loaderExitActive {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+  
+  .contentEnter {
+    opacity: 0;
+  }
+  
+  .contentEnterActive {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  
+  .contentExit {
+    opacity: 1;
+  }
+  
+  .contentExitActive {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
