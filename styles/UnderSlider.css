@@ -1,0 +1,30 @@
+﻿.Under_slider {
+  width: 100%;
+  height: 100%;
+}
+
+.Under_slider .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Under_slider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.Under_slider .swiper-slide {
+  width: 80%;
+}
+
+.Under_slider .swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.Under_slider .swiper-slide:nth-child(3n) {
+  width: 40%;
+}

@@ -1,6 +1,9 @@
 import Contact from "@/components/Contacts/Contact";
+import Events from "@/components/Events/Events";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import Hero from "@/components/Hero/Hero";
+import Memories from "@/components/Memories/Memories";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,11 +15,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
-
-      <Header/>
-
-      <Contact/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <Memories />
+      <Events />
+      <Contact />
+      <Footer />
     </>
   );
 }
