@@ -4,12 +4,14 @@
   width: 100%;
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 150px;
   h2 {
     margin: 0 auto;
-    font-size: clamp(21px, 13vw, 100px);
+    font-size: clamp(30px, 12vw, 70px);
     line-height: 110%;
     text-transform: uppercase;
     max-width: 600px;
+    font-weight: 100;
     font-family: "SangBleu Empire Trial";
   }
   .contact_desc {
@@ -44,6 +46,21 @@
       padding: 20px 0;
       margin-top: 40px;
       border-bottom: 1.5px solid #d0a666;
+    }
+    .input_contact_select {
+      text-align: center;
+      font-family: "Ubuntu" !important;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px !important;
+      line-height: 130%;
+      text-transform: uppercase;
+      color: #2e2e2e;
+      border: none;
+      background: transparent;
+      width: 100%;
+      max-width: 522px;
+      padding: 20px 0;
     }
   }
 

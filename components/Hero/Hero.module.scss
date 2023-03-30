@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    width: 100%;
-    height: auto;
-  }
+  height: 100vh;
+  background: url('../../public/flowers.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   .hero_content {
     position: absolute;
     .content {

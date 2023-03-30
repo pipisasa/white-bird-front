@@ -1,7 +1,10 @@
+import BirdVideo from "@/components/BirdVideo/BirdVideo";
 import Contact from "@/components/Contacts/Contact";
+import Events from "@/components/Events/Events";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
+import Memories from "@/components/Memories/Memories";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,6 +17,9 @@ export default function Home() {
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
       <Hero />
+      <Memories />
+      <Events />
+      <BirdVideo/>
       <Contact />
     </>
   );

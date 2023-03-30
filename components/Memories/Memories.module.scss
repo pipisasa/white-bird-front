@@ -1,0 +1,74 @@
+﻿.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  margin-top: 50px;
+  .mem {
+    
+    .left {
+      h1 {
+        font-size: clamp(30px, 12vw, 70px);
+        line-height: 110%;
+        text-transform: uppercase;
+        font-family: "SangBleu Empire Trial";
+        font-weight: 100;
+        color: #2e2e2e;
+      }
+      margin-bottom: 40px;
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      p {
+        font-family: "Ubuntu";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 180%;
+        color: #000000;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    .mem {
+      .left {
+        h1 {
+          font-size: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    max-width: 90%;
+    .mem {
+      gap: 20px;
+      .left {
+        h1 {
+          font-size: 30px;
+        }
+      }
+      .right {
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
