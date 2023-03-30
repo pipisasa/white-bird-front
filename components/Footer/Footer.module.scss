@@ -5,7 +5,7 @@
     rgb(68, 62, 123),
     rgb(115, 85, 129),
     rgb(202, 133, 86),
-    rgb(240, 182, 82)
+    // rgb(240, 182, 82)
   );
   padding-top: 100px;
   padding-bottom: 40px;
@@ -60,7 +60,6 @@
         border-radius: 50%;
         border: 1px solid rgb(208, 166, 102);
       }
-     
     }
   }
   .linear {
@@ -70,5 +69,39 @@
     width: 100%;
     margin: 0 auto;
     margin-top: 40px;
+  }
+  .low {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 1200px;
+    justify-content: space-between;
+    p {
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 160%;
+      text-align: right;
+      color: #858484;
+      text-transform: uppercase;
+    }
+    span {
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 100%;
+      color: #fff;
+    }
+    h4 {
+      font-family: "SangBleu Empire Trial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #fff;
+    }
   }
 }

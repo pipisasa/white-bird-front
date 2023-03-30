@@ -10,7 +10,6 @@ const Footer = () => {
   return (
     <div className={s.footer}>
       <div className={s.footer_contents}>
-
         <div className={s.footer_content}>
           <h5>График:</h5>
 
@@ -34,7 +33,6 @@ const Footer = () => {
           <p>Айтматова 95/2</p>
           <p>belyaptisa@gmail.com</p>
         </div>
-        
       </div>
 
       <div className={s.social}>
@@ -51,7 +49,17 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className={s.linear}/>
+      <hr className={s.linear} />
+
+      <div className={s.low}>
+        <div>
+          <p>2023 © ЛМК БЕЛАЯ ПТИЦА</p>
+        </div>
+        <div>
+          <span>made in</span>
+          <h4>SNOWFLAKE</h4>
+        </div>
+      </div>
     </div>
   );
 };
