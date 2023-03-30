@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import UnderSlider from '../UnderSlider/UnderSlider';
 import s from './Events.module.scss'
 
 const Events = () => {
@@ -12,7 +11,6 @@ const Events = () => {
                     МЕРОПРИЯТИЯ
                 </h1>
             </div>
-            <UnderSlider />
         </>
     );
 };
