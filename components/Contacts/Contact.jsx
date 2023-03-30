@@ -1,6 +1,11 @@
 import React from "react";
 import s from "./Contact.module.scss";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { Select } from "antd";
+
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
 
 const Contact = () => {
   return (
@@ -54,6 +59,29 @@ const Contact = () => {
           />
         </div>
 
+        <div style={{marginTop:'40px'}}>
+          <Select
+            className={s.input_contact_select}
+            defaultValue="зритель"
+            style={{
+              width: "100%",
+              border: "none",
+            }}
+            allowClear
+            onChange={handleChange}
+            options={[
+              {
+                value: "участник",
+                label: "участник",
+              },
+              {
+                value: "зритель",
+                label: "зритель",
+              },
+            ]}
+          />
+        </div>
+
         <p className={s.desc}>
           Я даю согласие на обработку моих персональных данных согласно политике
           конфиденциальности
@@ -61,7 +89,7 @@ const Contact = () => {
       </div>
 
       <div className={s.btn}>
-        <ArrowRightOutlined style={{color:'white', fontSize:'35px'}}/>
+        <ArrowRightOutlined style={{ color: "white", fontSize: "35px" }} />
       </div>
     </div>
   );

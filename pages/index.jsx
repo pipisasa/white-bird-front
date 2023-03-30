@@ -1,3 +1,4 @@
+import BirdVideo from "@/components/BirdVideo/BirdVideo";
 import Contact from "@/components/Contacts/Contact";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
@@ -14,7 +15,7 @@ export default function Home() {
       </Head>
 
       <Header/>
-
+      <BirdVideo/>
       <Contact/>
       <Footer/>
     </>
