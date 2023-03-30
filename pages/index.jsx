@@ -1,3 +1,4 @@
+import Contact from "@/components/Contacts/Contact";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Head from "next/head";
@@ -14,7 +15,7 @@ export default function Home() {
 
       <Header/>
 
-
+      <Contact/>
       <Footer/>
     </>
   );
