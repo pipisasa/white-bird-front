@@ -7,22 +7,18 @@ import { CSSTransition } from "react-transition-group";
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 3000);
+  // }, []);
   return (
     <>
-      {loading === true ? (
-        <Loader />
-      ) : (
-        <>
-          <Header />
-          {children}
-          <Footer />
-        </>
-      )}
+      <Loader />
+
+      <Header />
+      {children}
+      <Footer />
     </>
   );
 };
