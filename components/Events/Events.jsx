@@ -12,7 +12,10 @@ const Events = () => {
                     МЕРОПРИЯТИЯ
                 </h1>
             </div>
-            <UnderSlider />
+            <div className={s.slider}>
+                <UnderSlider />
+                <h1>ТУТ БУДЕТ ТЕКСТ</h1>
+            </div>
         </>
     );
 };
