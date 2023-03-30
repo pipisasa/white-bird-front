@@ -32,3 +32,41 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    .mem {
+      .left {
+        h1 {
+          font-size: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    max-width: 90%;
+    .mem {
+      gap: 20px;
+      .left {
+        h1 {
+          font-size: 30px;
+        }
+      }
+      .right {
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
