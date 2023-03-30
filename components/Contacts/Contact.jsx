@@ -11,7 +11,6 @@ const Contact = () => {
   return (
     <div className={s.contact}>
       <h2>Связаться с нами</h2>
-
       <div className={s.contact_desc}>
         <div>
           <input
