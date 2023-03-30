@@ -1,14 +1,30 @@
-﻿import React, { useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
 import { motion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
+import cn from 'classnames'
 
 const Header = () => {
+  // State - для header
+  const [isHeaderActive, setIsHeaderActive] = useState(false);
+
   const [showNav, setShowNav] = useState(false);
+
+  // Function - для header (при скролле)
+  useEffect(() => {
+    function handleScroll() {
+      setIsHeaderActive(window.pageYOffset > 50);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className={s.header_main}>
+      <header className={isHeaderActive
+            ? cn(s.header_main, s.header_main_active)
+            : s.header_main}>
         <div className={s.header_content}>
           <ul className={s.header_navbar}>
             <li>
