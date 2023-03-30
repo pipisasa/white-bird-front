@@ -40,7 +40,7 @@ export default function UnderSLider() {
             >
                 {dataSlide.map((slide) => (
                     <SwiperSlide>
-                        <img src={slide.image} alt="" />
+                        <img src={slide.image} alt="slide_img" />
                     </SwiperSlide>
                 ))}
             </Swiper>
