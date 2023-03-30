@@ -1,0 +1,39 @@
+.card_main {
+  padding: 15px;
+  border: 1px solid #ffffff00;
+  width: 500px;
+  transition: 1s;
+
+  &:hover {
+    border: 1px solid #A7834C;
+    transition: 1s;
+  }
+
+  .card_img {
+    height: 330px;
+    width: 100%;
+    border-radius: 15px;
+  }
+  //   card_img
+
+  .card_title {
+    font-size: clamp(30px, 12vw, 37px);
+    line-height: 110%;
+    text-transform: uppercase;
+    font-family: "SangBleu Empire Trial", sans-serif;
+    font-weight: 100;
+    color: #2e2e2e;
+  }
+  //   card_title
+
+  .card_description {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 140%;
+    color: #000000;
+  }
+  // card_description
+}
+// card_main
