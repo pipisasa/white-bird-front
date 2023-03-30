@@ -7,10 +7,11 @@
   margin-top: 150px;
   h2 {
     margin: 0 auto;
-    font-size: clamp(21px, 13vw, 100px);
+    font-size: clamp(30px, 12vw, 70px);
     line-height: 110%;
     text-transform: uppercase;
     max-width: 600px;
+    font-weight: 100;
     font-family: "SangBleu Empire Trial";
   }
   .contact_desc {
@@ -60,7 +61,6 @@
       width: 100%;
       max-width: 522px;
       padding: 20px 0;
-      
     }
   }
 

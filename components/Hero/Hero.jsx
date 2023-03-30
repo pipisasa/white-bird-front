@@ -5,7 +5,6 @@ const Hero = () => {
   return (
     <>
       <div className={s.hero}>
-        <img src="/flowers.jpg" alt="" />
         <div className={s.hero_content}>
           <div className={s.content}>
             <p>ЛМК</p>
