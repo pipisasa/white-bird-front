@@ -18,10 +18,10 @@ export default function Home() {
       </Head>
 
       <Header/>
-      <BirdVideo/>
       <Hero />
       <Memories />
       <Events />
+      <BirdVideo/>
       <Contact />
       <Footer />
     </>
