@@ -6,7 +6,6 @@
   align-items: center;
   .mem {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 50px;
     .left {
@@ -21,6 +20,8 @@
     }
     .right {
       display: flex;
+      justify-content: flex-end;
+      width: 100%;
       p {
         font-family: "Ubuntu";
         font-style: normal;
