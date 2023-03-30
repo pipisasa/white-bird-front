@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,6 +11,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
+
+      <Header/>
+
+
+      <Footer/>
     </>
   );
 }
