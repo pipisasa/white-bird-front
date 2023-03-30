@@ -3,12 +3,15 @@ import s from "./Header.module.scss";
 import { motion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
 import cn from 'classnames'
+import ModalConnect from "../Modal/ModalConnect";
 
 const Header = () => {
   // State - для header
   const [isHeaderActive, setIsHeaderActive] = useState(false);
 
   const [showNav, setShowNav] = useState(false);
+
+  const [showModal, setShowModal] = useState(false)
 
   // Function - для header (при скролле)
   useEffect(() => {
@@ -44,7 +47,10 @@ const Header = () => {
 
           <img className={s.header_logo} src="./logo.png" alt="logo" />
           <div className={s.header_btn_burger}>
-            <button className={s.header_btn}>Оставить заявку</button>
+            <button onClick={() => setShowModal(true)} className={s.header_btn}>Оставить заявку</button>
+            {
+              showModal == true ? <ModalConnect setShowModal={setShowModal} showModal={showModal} /> : ''
+            }
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
