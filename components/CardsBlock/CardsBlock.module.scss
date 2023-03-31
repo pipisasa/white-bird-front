@@ -1,6 +1,17 @@
 .cards_main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
+    display: grid;
+    grid-template-columns: 30% 30% 30%;  
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 50px;
+    font-family: "SangBleu Empire Trial", sans-serif !important;
 }
-// cards_main
+.cards_title{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+    h1{
+        font-family: "SangBleu Empire Trial", sans-serif !important;
+    }
+}
+

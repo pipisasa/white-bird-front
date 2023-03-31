@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import s from './CardsBlock.module.scss'
+import s from "./CardsBlock.module.scss";
 import axios from "axios";
 import Card from "../Card/Card";
 
@@ -17,14 +17,24 @@ const CardsBlock = () => {
     }
   }, []);
 
-  return <div className={s.cards_main}>
-    {dataSlide.map(card => {
-      return <Card
-        image={card.image} title={card.title} description={card.description}
-      />
-
-    })}
-  </div>;
+  return (
+    <div className="container">
+      <div className={s.cards_title}>
+        <h1>Новости</h1>
+      </div>
+      <div className={s.cards_main}>
+        {dataSlide.map((card) => {
+          return (
+            <Card
+              image={card.image}
+              title={card.title}
+              description={card.description}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
   //   cards_main
 };
 

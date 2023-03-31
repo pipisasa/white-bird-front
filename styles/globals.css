@@ -8,6 +8,11 @@ body{
   transition: 1s;
 }
 
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
