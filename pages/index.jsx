@@ -19,11 +19,11 @@ export default function Home() {
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
       <Hero />
-      <News />
       <Memories />
       <CardsBlock/>
       <Events />
       <BirdVideo />
+      <News />
       <Contact />
     </>
   );
