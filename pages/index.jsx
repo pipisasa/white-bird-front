@@ -6,8 +6,8 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Memories from "@/components/Memories/Memories";
 import Head from "next/head";
-import Modal from "@/components/Modal/ModalConnect";
 import CardsBlock from "@/components/CardsBlock/CardsBlock";
+import News from "@/components/News/News";
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
-      <Modal />
       <Hero />
+      <News />
       <Memories />
       <CardsBlock/>
       <Events />

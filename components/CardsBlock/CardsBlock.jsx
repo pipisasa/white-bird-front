@@ -17,11 +17,10 @@ const CardsBlock = () => {
     }
   }, []);
 
-<<<<<<< HEAD
   return (
     <div className="container">
       <div className={s.cards_title}>
-        <h1>Новости</h1>
+        <h1>Объекты</h1>
       </div>
       <div className={s.cards_main}>
         {dataSlide.map((card) => {
@@ -37,21 +36,6 @@ const CardsBlock = () => {
     </div>
   );
   //   cards_main
-=======
-  return   <>
-  <h1 className={s.cards_title}>ОБЪЕКТЫ</h1>
-
-  <div className={s.cards_main}>
-    {dataSlide.map(card => {
-       return <Card 
-       image={card.image} title={card.title} description={card.description}
-       />
-
-    })}
-  </div>;
-//   cards_main
-  </>   
->>>>>>> 7c3bfda4bba84332cc24fd2cda70a6612b560aa7
 };
 
 export default CardsBlock;

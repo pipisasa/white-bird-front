@@ -1,6 +1,7 @@
 import Loader from "@/components/Loader/Loader";
 import "@/styles/globals.css";
 import "@/styles/UnderSlider.css";
+import "../styles/news.css"
 import { useEffect, useState } from "react";
 import Layout from "./Layout/Layout";
 
