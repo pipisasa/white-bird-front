@@ -23,7 +23,7 @@ export default function Home() {
       <Memories />
       <CardsBlock/>
       <Events />
-      <BirdVideo/>
+      <BirdVideo />
       <Contact />
     </>
   );

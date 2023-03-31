@@ -1,17 +1,118 @@
 import React from "react";
 import { Modal } from "antd";
+import Image from "next/image";
+import s from "./ModalConnect.module.scss";
+import { ArrowRightOutlined } from "@ant-design/icons";
+import { Select } from "antd";
+import logo from "../../public/logo.png";
 
-const ModalConnect = ({showModal, setShowModal}) => {
+const ModalConnect = ({ showModal, setShowModal }) => {
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+  const visibleModal = () => {
+    setShowModal(true);
+  };
+
+  const handleOk = () => {
+    setShowModal(false);
+  };
+
+  const handleCancel = () => {
+    setShowModal(false);
+  };
   return (
     <Modal
-        title="Модальное окно"
-        open={showModal}
-        onOk={''}
-        onCancel={''}
-        centered
-      >
-        <p style={{color: 'red'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, voluptatum deserunt debitis expedita perspiciatis earum iusto sequi, deleniti inventore ipsa ducimus fugit, quibusdam consequatur dolor minus rem! Enim, distinctio tempore. A ut eos fuga asperiores modi ipsum quos tempora minima perspiciatis eveniet exercitationem odit, pariatur quae. A adipisci reiciendis facere fugit esse dignissimos ut itaque amet sunt corrupti, porro alias quaerat iusto doloribus doloremque. Necessitatibus beatae doloremque fuga culpa impedit numquam possimus mollitia modi optio. Odio doloremque impedit dignissimos ea ipsa et sit, laborum atque, voluptatibus voluptatum repellat illo maiores? Voluptatum vitae corrupti tenetur, esse assumenda quia doloremque molestiae quibusdam.</p>
-      </Modal>
+      open={showModal}
+      onOk={false}
+      onCancel={handleCancel}
+      centered
+    >
+      <div className={s.contact}>
+        <h2>
+          <Image src={logo} width={280} height={190} alt='logo'/>
+        </h2>
+        <div className={s.contact_desc}>
+          <div>
+            <input
+              className={s.input_contact}
+              type="text"
+              name="name"
+              data-id="1"
+              placeholder="ФИО"
+            />
+          </div>
+          <div>
+            <input
+              className={s.input_contact}
+              type="text"
+              name="name"
+              data-id="1"
+              placeholder="Страна"
+            />
+          </div>
+          <div>
+            <input
+              className={s.input_contact}
+              type="text"
+              name="name"
+              data-id="1"
+              placeholder="Город"
+            />
+          </div>
+          <div>
+            <input
+              className={s.input_contact}
+              type="email"
+              name="name"
+              data-id="1"
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <input
+              className={s.input_contact}
+              type="number"
+              name="name"
+              data-id="1"
+              placeholder="Tелефон"
+            />
+          </div>
+
+          <div style={{ marginTop: "40px" }}>
+            <Select
+              className={s.input_contact_select}
+              defaultValue="зритель"
+              style={{
+                width: "100%",
+                border: "none",
+              }}
+              allowClear
+              onChange={handleChange}
+              options={[
+                {
+                  value: "участник",
+                  label: "участник",
+                },
+                {
+                  value: "зритель",
+                  label: "зритель",
+                },
+              ]}
+            />
+          </div>
+
+          <p className={s.desc}>
+            Я даю согласие на обработку моих персональных данных согласно
+            политике конфиденциальности
+          </p>
+        </div>
+
+        <div className={s.btn}>
+          <ArrowRightOutlined style={{ color: "white", fontSize: "35px" }} />
+        </div>
+      </div>
+    </Modal>
   );
 };
 
