@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import CardsBlock from '../CardsBlock/CardsBlock';
 import UnderSlider from '../UnderSlider/UnderSlider';
 import s from './Events.module.scss'
 
@@ -13,7 +12,6 @@ const Events = () => {
                     МЕРОПРИЯТИЯ
                 </h1>
             </div>
-            <CardsBlock/>
             <UnderSlider />
         </>
     );

@@ -7,6 +7,7 @@ import Hero from "@/components/Hero/Hero";
 import Memories from "@/components/Memories/Memories";
 import Head from "next/head";
 import Modal from "@/components/Modal/ModalConnect";
+import CardsBlock from "@/components/CardsBlock/CardsBlock";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Modal />
       <Hero />
       <Memories />
+      <CardsBlock/>
       <Events />
       <BirdVideo/>
       <Contact />

@@ -1,7 +1,7 @@
 .card_main {
   padding: 15px;
   border: 1px solid #ffffff00;
-  width: 500px;
+  width: 480px;
   transition: 1s;
 
   &:hover {
@@ -13,6 +13,7 @@
     height: 330px;
     width: 100%;
     border-radius: 15px;
+    transform: scale(1);
   }
   //   card_img
 

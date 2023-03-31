@@ -1,6 +1,19 @@
-.cards_main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
+.cards_title {
+    font-family: "SangBleu Empire Trial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    font-size: clamp(21px, 10vw, 70px);
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #2e2e2e;
+    padding: 120px 0 60px 120px;
+  }
+//   cards_title
+
+.cards_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 // cards_main
