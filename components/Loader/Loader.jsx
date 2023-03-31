@@ -108,7 +108,7 @@ const Loader = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowLoader(true);
-    }, 2500); // задержка перед показом лоадера
+    }, 2500); 
 
     return () => clearTimeout(timeoutId);
   }, []);
