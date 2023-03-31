@@ -21,7 +21,7 @@ export default function Home() {
       <Modal />
       <Hero />
       <Memories />
-      <CardsBlock />
+      <CardsBlock/>
       <Events />
       <BirdVideo />
       <Contact />
