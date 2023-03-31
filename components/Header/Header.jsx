@@ -26,8 +26,8 @@ const Header = () => {
   return (
     <>
       <header className={isHeaderActive
-            ? cn(s.header_main, s.header_main_active)
-            : s.header_main}>
+        ? cn(s.header_main, s.header_main_active)
+        : s.header_main}>
         <div className={s.header_content}>
           <ul className={s.header_navbar}>
             <li>
