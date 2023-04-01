@@ -8,7 +8,7 @@ import "swiper/css/effect-coverflow";
 const News = () => {
   const [photos, setPhotos] = useState([])
   const getPhotos = async () => {
-    await axios.get('https://jsonplaceholder.typicode.com/photos?_limit=10')
+    await axios.get('http://159.65.144.176/api/events/')
       .then(res => setPhotos(res.data))
   }
   useEffect(() => {
@@ -55,7 +55,7 @@ const News = () => {
             photos.map(photo => {
               return (
                 <SwiperSlide>
-                  <img src={photo.url} alt='image' />
+                  <img src={photo.image} alt='image' />
                 </SwiperSlide>
               )
             })
