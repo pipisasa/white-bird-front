@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
 import cn from 'classnames'
 import ModalConnect from "../Modal/ModalConnect";
+import Image from "next/image";
 
 const Header = () => {
   // State - для header

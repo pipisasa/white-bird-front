@@ -230,3 +230,10 @@ const ModalConnect = ({ showModal, setShowModal }) => {
 };
 
 export default ModalConnect;
+
+
+// events
+// "id": 9,
+// "title": "Lorem2",
+// "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis totam nemo error blanditiis modi aut consequuntur, accusamus dicta maiores eligendi quaerat sit cumque ad, nostrum aperiam assumenda esse corrupti hic.",
+// "image": "http://159.65.144.176/f77bab65-b095-4d1f-8441-ad111ec89487.jpeg"
