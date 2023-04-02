@@ -7,6 +7,7 @@ const Hero = () => {
   return (
     <>
       <div className={s.hero}>
+        <div className="container">
         <div className={s.hero_content}>
           <div className={s.content_left}>
             <Image src={img} alt="image" />
@@ -16,6 +17,7 @@ const Hero = () => {
             <h2>БЕЛАЯ ПТИЦА</h2>
             <p>Литературно-музыкальный клуб </p>
           </div>
+        </div>
         </div>
       </div>
     </>
