@@ -28,17 +28,19 @@ const ModalConnect = ({ showModal, setShowModal }) => {
   });
   const [emailError, setEmailError] = useState(false);
 
-  const userPost = async() => {
-      await axios.post('http://159.65.144.176/api/reqs/',{
-        "full_name": info.full_name,
-        "country": info.country,
-        "city": info.city,
-        "phone_number": info.phone_number,
-        "role": info.role 
-        }
-      ).then(res => console.log(res))
-      .catch(console.log("Error"))
-  }
+  const userPost = async () => {
+    await axios
+      .post("http://159.65.144.176/api/reqs/", {
+        full_name: info.full_name,
+        country: info.country,
+        city: info.city,
+        email: info.email,
+        phone_number: info.phone_number,
+        role: info.role,
+      })
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,7 +52,6 @@ const ModalConnect = ({ showModal, setShowModal }) => {
       phone_number: false,
       role: false,
     };
-    setIsNotValid(errors);
     if (!/^([^\s]+\s[^\s]+.*)$/.test(info.full_name)) {
       setIsFullName(false);
     } else {
@@ -79,7 +80,8 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     } else {
       setEmailError(true);
     }
-    return userPost()
+    setIsNotValid(errors);
+    userPost();
   };
 
   const handleCancel = () => {
@@ -172,7 +174,7 @@ const ModalConnect = ({ showModal, setShowModal }) => {
               onChange={(e) =>
                 setInfo({
                   ...info,
-                  phone_number: e.target.value.replace(/[^\d+]/g, ""),
+                  phone_number: e.target.value,
                 })
               }
             />
@@ -215,22 +217,17 @@ const ModalConnect = ({ showModal, setShowModal }) => {
             политике конфиденциальности
           </p>
         </div>
-        <div className={s.btn}>
-          <form onSubmit={handleSubmit}>
-            <button type="submit">
-              <ArrowRightOutlined
-                style={{ color: "white", fontSize: "35px" }}
-              />
-            </button>
-          </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <button className={s.btn}>
+            <ArrowRightOutlined style={{ color: "white", fontSize: "35px" }} />
+          </button>
+        </form>
       </div>
     </Modal>
   );
 };
 
 export default ModalConnect;
-
 
 // events
 // "id": 9,

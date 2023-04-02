@@ -76,7 +76,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: none;
     border-radius: 50%;
     background: #d0a666;
+    span{
+      background-color: #d0a666;
+    }
   }
 }
