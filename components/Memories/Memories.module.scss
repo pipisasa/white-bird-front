@@ -1,5 +1,8 @@
 ﻿.Memories {
   background-color: #062d62;
+  padding-bottom: 45px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .container {
   max-width: 1200px;
@@ -9,10 +12,11 @@
   display: flex;
   align-items: center;
   padding-bottom: 70px;
+  text-align: center;
   .mem {
     .left {
       h1 {
-        font-size: clamp(30px, 12vw, 70px);
+        font-size: clamp(30px, 12vw, 53px);
         line-height: 110%;
         text-transform: uppercase;
         font-family: "SangBleu Empire Trial";

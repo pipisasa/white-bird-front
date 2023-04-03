@@ -55,7 +55,9 @@ const News = () => {
             photos.map(photo => {
               return (
                 <SwiperSlide>
-                  <img src={photo.image} alt='image' />
+                  <img style={{
+                    objectFit: "cover"
+                  }} src={photo.image} alt='image' />
                 </SwiperSlide>
               )
             })
