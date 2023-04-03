@@ -5,13 +5,10 @@ const BirdVideo = () => {
   return (
     <div className={s.birdVideo}>
       <h2>Видео о нас</h2>
-      <video
-        controls
-        muted
-        style={{ width: "100%", margin: "0 auto", borderRadius: "20px" }}
-      >
-        <source src="/miyajima-33821-1.mp4" type="video/mp4" />
-      </video>{" "}
+      <iframe width="100%" height="600px" style={{
+        borderRadius: "20px",
+        border: 'none'
+      }} src="https://www.youtube.com/embed/HOejnkjdoFc?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>{" "}
     </div>
   );
 };

@@ -4,6 +4,8 @@ import {
   WhatsAppOutlined,
   PhoneOutlined,
   InstagramOutlined,
+  FacebookOutlined,
+  YoutubeOutlined,
 } from "@ant-design/icons";
 
 const Footer = () => {
@@ -41,10 +43,19 @@ const Footer = () => {
             <WhatsAppOutlined style={{ color: "white" }} />
           </div>
           <div className={s.social_block}>
-            <PhoneOutlined style={{ color: "white" }} />
+            <a href="https://m.facebook.com/story.php?story_fbid=pfbid0i66H9LXfkEz4hpdR44ozeYn2PSBLHc58P7ckGzWcuT3DyRK4RxHdCGmtiUBcDuzEl&id=100087805783745&mibextid=Nif5oz">
+              <FacebookOutlined style={{ color: "white" }} />
+            </a>
           </div>
           <div className={s.social_block}>
-            <InstagramOutlined style={{ color: "white" }} />
+            <a href="https://www.youtube.com/@belayaptisa">
+              <YoutubeOutlined style={{ color: "white" }} />
+            </a>
+          </div>
+          <div className={s.social_block}>
+            <a href="https://www.instagram.com/belayaptisa/?igshid=ZDdkNTZiNTM%3D">
+              <InstagramOutlined style={{ color: "white" }} />
+            </a>
           </div>
         </div>
       </div>
