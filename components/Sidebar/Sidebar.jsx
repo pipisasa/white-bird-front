@@ -53,7 +53,7 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.7 }}
           whileHover={{ scale: 1.1, transition: "0.4s" }}
         >
-          <a href="#" onClick={() => setShowNav(false)}>
+          <a href="#aboutUs" onClick={() => setShowNav(false)}>
             О компании
           </a>
         </motion.li>
@@ -63,7 +63,7 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.5 }}
           whileHover={{ scale: 1.1, transition: "0.4s" }}
         >
-          <a href="#" onClick={() => setShowNav(false)}>
+          <a href="#events" onClick={() => setShowNav(false)}>
             Мероприятия
           </a>
         </motion.li>
@@ -73,7 +73,7 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.4 }}
           whileHover={{ scale: 1.1, transition: "0.4s" }}
         >
-          <a href="#" onClick={() => setShowNav(false)}>
+          <a href="#news" onClick={() => setShowNav(false)}>
             Новости
           </a>
         </motion.li>
@@ -83,7 +83,7 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.2 }}
           whileHover={{ scale: 1.1, transition: "0" }}
         >
-          <a href="#" onClick={() => setShowNav(false)}>
+          <a href="#contact" onClick={() => setShowNav(false)}>
             Контакты
           </a>
         </motion.li>

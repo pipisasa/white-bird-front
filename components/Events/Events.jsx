@@ -5,7 +5,7 @@ import s from './Events.module.scss'
 const Events = () => {
     return (
         <>
-            <div className={s.events}>
+            <div id='events' className={s.events}>
                 <h1>
                     ПОСЛЕДНИЕ
                     <br />

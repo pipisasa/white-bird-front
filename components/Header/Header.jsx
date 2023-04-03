@@ -32,16 +32,16 @@ const Header = () => {
         <div className={s.header_content}>
           <ul className={s.header_navbar}>
             <li>
-              <a href="#">О компании</a>
+              <a href="#aboutUs">О компании</a>
             </li>
             <li>
-              <a href="#">Мероприятия</a>
+              <a href="#events">Мероприятия</a>
             </li>
             <li>
-              <a href="#">Новости</a>
+              <a href="#news">Новости</a>
             </li>
             <li>
-              <a href="#">Контакты</a>
+              <a href="#contact">Контакты</a>
             </li>
           </ul>
           {/* header_navbar */}

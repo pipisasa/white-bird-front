@@ -3,7 +3,7 @@ import s from "./Memories.module.scss";
 
 const Memories = () => {
   return (
-    <div className={s.Memories}>
+    <div id="aboutUs" className={s.Memories}>
       <div className={s.container}>
         <div className={s.mem}>
           <div className={s.left}>

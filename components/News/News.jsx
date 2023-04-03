@@ -15,7 +15,7 @@ const News = () => {
     getPhotos(photos)
   }, [photos])
   return (
-    <div className={s.news_main}>
+    <div id="news" className={s.news_main}>
       <div className="container">
         <div className={s.title}>
           <h1>Новости</h1>
