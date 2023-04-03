@@ -28,6 +28,7 @@ export default function UnderSLider() {
                 centeredSlides={true}
                 spaceBetween={30}
                 freeMode={true}
+                initialSlide={2}
                 slidesPerView={1}
                 breakpoints={{
                     600: {

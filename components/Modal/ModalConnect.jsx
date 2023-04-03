@@ -8,6 +8,7 @@ import logo from "../../public/logo.png";
 import axios from "axios";
 
 const ModalConnect = ({ showModal, setShowModal }) => {
+
   const [info, setInfo] = useState({
     full_name: "",
     country: "",
@@ -80,9 +81,14 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     } else {
       setEmailError(true);
     }
+    if(!info.phone_number.startsWith('+')){
+      + info.phone_number
+    }
     setIsNotValid(errors);
     userPost();
   };
+
+  console.log(info.phone_number);
 
   const handleCancel = () => {
     setShowModal(false);
@@ -171,15 +177,11 @@ const ModalConnect = ({ showModal, setShowModal }) => {
               data-id="1"
               placeholder="Tелефон"
               value={info.phone_number}
-              onChange={(e) =>
-                setInfo({
-                  ...info,
-                  phone_number: e.target.value,
-                })
+              onChange={(e) => setInfo({...info, phone_number: e.target.value})
               }
             />
             <p style={{ color: "green" }}>
-              Введите корректный номер телефона <br /> Пример: +70000000000
+              Введите корректный номер телефона <br /> Пример: +996 123 456 789
             </p>
           </div>
 
@@ -196,11 +198,11 @@ const ModalConnect = ({ showModal, setShowModal }) => {
               onChange={(e) => setInfo({ ...info, role: e })}
               options={[
                 {
-                  value: "участник",
+                  value: "Participant",
                   label: "участник",
                 },
                 {
-                  value: "зритель",
+                  value: "Viewer",
                   label: "зритель",
                 },
               ]}
@@ -228,9 +230,3 @@ const ModalConnect = ({ showModal, setShowModal }) => {
 };
 
 export default ModalConnect;
-
-// events
-// "id": 9,
-// "title": "Lorem2",
-// "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis totam nemo error blanditiis modi aut consequuntur, accusamus dicta maiores eligendi quaerat sit cumque ad, nostrum aperiam assumenda esse corrupti hic.",
-// "image": "http://159.65.144.176/f77bab65-b095-4d1f-8441-ad111ec89487.jpeg"
