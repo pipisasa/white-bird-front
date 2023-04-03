@@ -6,9 +6,9 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import logo from "../../public/logo.png";
 import axios from "axios";
+import {Alert} from "antd";
 
 const ModalConnect = ({ showModal, setShowModal }) => {
-
   const [info, setInfo] = useState({
     full_name: "",
     country: "",
@@ -28,6 +28,8 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     role: false,
   });
   const [emailError, setEmailError] = useState(false);
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
+  const [axiosStatus, setAxiosStatus] = useState(null);
 
   const userPost = async () => {
     await axios
@@ -39,8 +41,18 @@ const ModalConnect = ({ showModal, setShowModal }) => {
         phone_number: info.phone_number,
         role: info.role,
       })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        if (res.status === "200" || "201") {
+          setAxiosStatus(true);
+        } else {
+          setAxiosStatus(false);
+        }
+      })
+      .catch((error) => {
+        if(error){
+          setAxiosStatus(false)
+        }
+      });
   };
 
   const handleSubmit = (event) => {
@@ -55,6 +67,7 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     };
     if (!/^([^\s]+\s[^\s]+.*)$/.test(info.full_name)) {
       setIsFullName(false);
+      !userPost();
     } else {
       setIsFullName(true);
     }
@@ -81,151 +94,176 @@ const ModalConnect = ({ showModal, setShowModal }) => {
     } else {
       setEmailError(true);
     }
-    if(!info.phone_number.startsWith('+')){
-      + info.phone_number
+    if (info.phone_number.length < 10) {
+      setPhoneNumberError(true);
     }
     setIsNotValid(errors);
     userPost();
+    setInfo({
+      full_name: "",
+      country: "",
+      city: "",
+      email: "",
+      phone_number: "",
+      role: "",
+    });
   };
-
-  console.log(info.phone_number);
 
   const handleCancel = () => {
     setShowModal(false);
   };
   return (
-    <Modal open={showModal} onOk={false} onCancel={handleCancel} centered>
-      <div className={s.contact}>
-        <h2>
-          <Image src={logo} width={280} height={190} alt="logo" />
-        </h2>
-        <div className={s.contact_desc}>
-          <div>
-            <input
-              className={s.input_contact}
-              type="text"
-              name="name"
-              data-id="1"
-              placeholder="ФИО"
-              value={info.full_name}
-              onChange={(e) => setInfo({ ...info, full_name: e.target.value })}
-            />
-            {isFullName === false ? (
-              <p style={{ color: "red" }}>Введите ваше полное ФИО</p>
-            ) : (
-              ""
-            )}
-            {isNotValid.full_name === true ? (
-              <p style={{ color: "red" }}>Заполните данное поле</p>
-            ) : (
-              ""
-            )}
-          </div>
-          <div>
-            <input
-              className={s.input_contact}
-              type="text"
-              name="name"
-              data-id="1"
-              placeholder="Страна"
-              value={info.country}
-              onChange={(e) => setInfo({ ...info, country: e.target.value })}
-            />
-            {isNotValid.country === true ? (
-              <p style={{ color: "red" }}>Заполните данное поле</p>
-            ) : (
-              ""
-            )}
-          </div>
-          <div>
-            <input
-              className={s.input_contact}
-              type="text"
-              name="name"
-              data-id="1"
-              placeholder="Город"
-              value={info.city}
-              onChange={(e) => setInfo({ ...info, city: e.target.value })}
-            />
-            {isNotValid.city === true ? (
-              <p style={{ color: "red" }}>Заполните данное поле</p>
-            ) : (
-              ""
-            )}
-          </div>
-          <div>
-            <input
-              className={s.input_contact}
-              type="email"
-              name="name"
-              data-id="1"
-              placeholder="Email"
-              value={info.email}
-              onChange={(e) => setInfo({ ...info, email: e.target.value })}
-            />
-            {emailError === true ? (
-              <p style={{ color: "red" }}>Введите корректный email адрес</p>
-            ) : (
-              ""
-            )}
-          </div>
-          <div>
-            <input
-              className={s.input_contact}
-              type="number"
-              name="name"
-              data-id="1"
-              placeholder="Tелефон"
-              value={info.phone_number}
-              onChange={(e) => setInfo({...info, phone_number: e.target.value})
-              }
-            />
-            <p style={{ color: "green" }}>
-              Введите корректный номер телефона <br /> Пример: +996 123 456 789
+    <>
+      <Modal open={showModal} onOk={false} onCancel={handleCancel} centered>
+        <div className={s.contact}>
+          <h2>
+            <Image src={logo} width={280} height={190} alt="logo" />
+          </h2>
+          <div className={s.contact_desc}>
+            <div>
+              <input
+                className={s.input_contact}
+                type="text"
+                name="name"
+                data-id="1"
+                placeholder="ФИО"
+                value={info.full_name}
+                onChange={(e) =>
+                  setInfo({ ...info, full_name: e.target.value })
+                }
+              />
+              {isFullName === false ? (
+                <p style={{ color: "red" }}>Введите ваше полное ФИО</p>
+              ) : (
+                ""
+              )}
+              {isNotValid.full_name === true ? (
+                <p style={{ color: "red" }}>Заполните данное поле</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              <input
+                className={s.input_contact}
+                type="text"
+                name="name"
+                data-id="1"
+                placeholder="Страна"
+                value={info.country}
+                onChange={(e) => setInfo({ ...info, country: e.target.value })}
+              />
+              {isNotValid.country === true ? (
+                <p style={{ color: "red" }}>Заполните данное поле</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              <input
+                className={s.input_contact}
+                type="text"
+                name="name"
+                data-id="1"
+                placeholder="Город"
+                value={info.city}
+                onChange={(e) => setInfo({ ...info, city: e.target.value })}
+              />
+              {isNotValid.city === true ? (
+                <p style={{ color: "red" }}>Заполните данное поле</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              <input
+                className={s.input_contact}
+                type="email"
+                name="name"
+                data-id="1"
+                placeholder="Email"
+                value={info.email}
+                onChange={(e) => setInfo({ ...info, email: e.target.value })}
+              />
+              {emailError === true ? (
+                <p style={{ color: "red" }}>Введите корректный email адрес</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              <input
+                className={s.input_contact}
+                type="number"
+                name="name"
+                data-id="1"
+                placeholder="Tелефон"
+                value={info.phone_number}
+                onChange={(e) =>
+                  setInfo({ ...info, phone_number: e.target.value })
+                }
+              />
+              {phoneNumberError === true ? (
+                <p style={{ color: "red" }}>
+                  Введите корректный номер телефона
+                </p>
+              ) : (
+                ""
+              )}
+              <p style={{ color: "green" }}>Пример: +996 123 456 789</p>
+            </div>
+
+            <div style={{ marginTop: "40px" }}>
+              <Select
+                className={s.input_contact_select}
+                defaultValue="зритель"
+                style={{
+                  width: "100%",
+                  border: "none",
+                }}
+                allowClear
+                value={info.role}
+                onChange={(e) => setInfo({ ...info, role: e })}
+                options={[
+                  {
+                    value: "Participant",
+                    label: "участник",
+                  },
+                  {
+                    value: "Viewer",
+                    label: "зритель",
+                  },
+                ]}
+              />
+              {isNotValid.role === true ? (
+                <p style={{ color: "red" }}>Выберите роль</p>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <p className={s.desc}>
+              Я даю согласие на обработку моих персональных данных согласно
+              политике конфиденциальности
             </p>
           </div>
-
-          <div style={{ marginTop: "40px" }}>
-            <Select
-              className={s.input_contact_select}
-              defaultValue="зритель"
-              style={{
-                width: "100%",
-                border: "none",
-              }}
-              allowClear
-              value={info.role}
-              onChange={(e) => setInfo({ ...info, role: e })}
-              options={[
-                {
-                  value: "Participant",
-                  label: "участник",
-                },
-                {
-                  value: "Viewer",
-                  label: "зритель",
-                },
-              ]}
-            />
-            {isNotValid.role === true ? (
-              <p style={{ color: "red" }}>Выберите роль</p>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <p className={s.desc}>
-            Я даю согласие на обработку моих персональных данных согласно
-            политике конфиденциальности
-          </p>
+          <form onSubmit={handleSubmit}>
+            <button className={s.btn}>
+              <ArrowRightOutlined
+                style={{ color: "white", fontSize: "35px" }}
+              />
+            </button>
+          </form>
         </div>
-        <form onSubmit={handleSubmit}>
-          <button className={s.btn}>
-            <ArrowRightOutlined style={{ color: "white", fontSize: "35px" }} />
-          </button>
-        </form>
-      </div>
-    </Modal>
+      </Modal>
+      {axiosStatus === true ? (
+        <Alert message="Success Tips" type="success" showIcon className={s.alert} />
+      ) : axiosStatus === false ? (
+        <Alert message="Ошибка, попробуйте позже!" type="error" showIcon className={s.alert}/>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

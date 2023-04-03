@@ -84,3 +84,18 @@
     }
   }
 }
+
+.alert{
+  animation-name: alert;
+  animation-duration: 1s;
+  position: absolute;
+}
+
+@keyframes alert {
+  0%{
+    right: -100%;
+  }
+  100%{
+    right: 0;
+  }
+}

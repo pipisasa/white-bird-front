@@ -15,6 +15,7 @@ const Hero = () => {
           <div className={s.content_right}>
             <p>ЛМК</p>
             <h2>БЕЛАЯ ПТИЦА</h2>
+            <hr />
             <p>Литературно-музыкальный клуб </p>
           </div>
         </div>
