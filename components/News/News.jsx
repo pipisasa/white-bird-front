@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./News.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectCoverflow } from "swiper";
+import { Navigation, EffectCoverflow, Pagination } from "swiper";
 import axios from "axios";
 import "swiper/css/effect-coverflow";
 
@@ -34,6 +34,7 @@ const News = () => {
           }}
           loop={true}
           slidesPerView={3}
+          pagination={true}
           initialSlide={1}
           breakpoints={{
             0: {
@@ -41,15 +42,15 @@ const News = () => {
               effect: "slide",
             },
             600: {
-              slidesPerView: 3,
+              slidesPerView: 1,
               effect: "coverflow"
             },
-            700: {
+            960: {
               slidesPerView: 3,
               effect: "coverflow"
             }
           }}
-          modules={[Navigation, EffectCoverflow]}
+          modules={[Navigation, EffectCoverflow, Pagination]}
           className="sliderNews">
           {
             photos.map(photo => {

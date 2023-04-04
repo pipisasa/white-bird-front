@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .contact {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,14 +13,14 @@
     text-transform: uppercase;
     max-width: 600px;
     font-weight: 100;
-    font-family: "SangBleu Empire Trial";
+    font-family: 'Montserrat', sans-serif;
   }
   .contact_desc {
     display: block;
     justify-content: center;
     margin-bottom: 40px;
     .desc {
-      font-family: "Ubuntu";
+      font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -30,7 +31,7 @@
     }
     .input_contact {
       text-align: center;
-      font-family: "Ubuntu" !important;
+      font-family: 'Montserrat', sans-serif !important;
       font-style: normal;
       font-weight: normal;
       font-size: 20px !important;
@@ -47,7 +48,7 @@
     }
     .input_contact_select {
       text-align: center;
-      font-family: "Ubuntu" !important;
+      font-family: 'Montserrat', sans-serif !important;
       font-style: normal;
       font-weight: normal;
       font-size: 20px !important;

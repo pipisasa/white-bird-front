@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import axios from 'axios'
 
 import "swiper/css";
@@ -30,13 +31,19 @@ export default function UnderSLider() {
                 freeMode={true}
                 initialSlide={2}
                 slidesPerView={1}
+                pagination={true}
+                navigation={true}
+                modules={[FreeMode, Navigation, Pagination]}
                 breakpoints={{
+                    0: {
+                        navigation: false,
+                        slidesPerView: 1
+                    },
                     600: {
                         slidesPerView: "1.5",
+                        navigation: true
                     },
                 }}
-                navigation={true}
-                modules={[FreeMode, Navigation]}
                 className="Under_slider"
             >
                 {dataSlide.map((slide) => (

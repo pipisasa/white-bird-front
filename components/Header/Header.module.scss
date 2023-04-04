@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .header_main_active {
   background-color: #052f61;
   transition: 1s;
@@ -24,7 +25,7 @@
         list-style: none;
         a {
           text-decoration: none;
-          font-family: "Ubuntu", sans-serif;
+          font-family: 'Montserrat', sans-serif;
           font-style: normal;
           font-weight: 300;
           font-size: 17px;
@@ -49,7 +50,7 @@
       margin-right: 65px;
       text-align: left;
       height: 38px;
-      font-family: "Ubuntu", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: 330;
       font-size: 16px;
@@ -153,13 +154,29 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .header_main {
     padding: 0 5%;
     .header_content {
       .header_btn_burger {
         .header_btn {
-          display: none;
+          font-size: 11px !important;
+          padding: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header_main {
+    padding: 0 5%;
+    .header_content {
+      .header_btn_burger {
+        .header_btn {
+          font-size: 10px !important;
+          padding: 6px !important;
+          text-align: center;
         }
       }
     }

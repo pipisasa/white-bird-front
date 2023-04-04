@@ -6,7 +6,7 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import logo from "../../public/logo.png";
 import axios from "axios";
-import {Alert} from "antd";
+import { Alert } from "antd";
 
 const ModalConnect = ({ showModal, setShowModal }) => {
   const [info, setInfo] = useState({
@@ -49,8 +49,8 @@ const ModalConnect = ({ showModal, setShowModal }) => {
         }
       })
       .catch((error) => {
-        if(error){
-          setAxiosStatus(false)
+        if (error) {
+          setAxiosStatus(false);
         }
       });
   };
@@ -112,6 +112,7 @@ const ModalConnect = ({ showModal, setShowModal }) => {
   const handleCancel = () => {
     setShowModal(false);
   };
+
   return (
     <>
       <Modal open={showModal} onOk={false} onCancel={handleCancel} centered>
@@ -246,9 +247,20 @@ const ModalConnect = ({ showModal, setShowModal }) => {
               Я даю согласие на обработку моих персональных данных согласно
               политике конфиденциальности
             </p>
+            {axiosStatus === true ? (
+            <p style={{ color: "green", fontSize: '20px' }}>Данные были успешно отправлены!</p>
+          ) : axiosStatus === false ? (
+            <p style={{ color: "red", fontSize: '20px' }}>Заполните все поля корректно!</p>
+          ) : (
+            ""
+          )}
           </div>
+          
           <form onSubmit={handleSubmit}>
-            <button className={s.btn}>
+            <button
+              onClick={() => (axiosStatus === true ? handleCancel() : "")}
+              className={s.btn}
+            >
               <ArrowRightOutlined
                 style={{ color: "white", fontSize: "35px" }}
               />
@@ -256,13 +268,6 @@ const ModalConnect = ({ showModal, setShowModal }) => {
           </form>
         </div>
       </Modal>
-      {axiosStatus === true ? (
-        <Alert message="Success Tips" type="success" showIcon className={s.alert} />
-      ) : axiosStatus === false ? (
-        <Alert message="Ошибка, попробуйте позже!" type="error" showIcon className={s.alert}/>
-      ) : (
-        ""
-      )}
     </>
   );
 };

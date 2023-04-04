@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .contact {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 150px;
+  margin-top: 50px;
   h2 {
     margin: 0 auto;
     font-size: clamp(30px, 12vw, 70px);
@@ -12,16 +13,14 @@
     text-transform: uppercase;
     max-width: 600px;
     font-weight: 100;
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
   .contact_desc {
     display: block;
     justify-content: center;
-    margin-top: 30px;
     margin-bottom: 40px;
-
     .desc {
-      font-family: "Ubuntu";
+      font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -32,7 +31,7 @@
     }
     .input_contact {
       text-align: center;
-      font-family: "Ubuntu" !important;
+      font-family: 'Montserrat', sans-serif !important;
       font-style: normal;
       font-weight: normal;
       font-size: 20px !important;
@@ -49,7 +48,7 @@
     }
     .input_contact_select {
       text-align: center;
-      font-family: "Ubuntu" !important;
+      font-family: 'Montserrat', sans-serif !important;
       font-style: normal;
       font-weight: normal;
       font-size: 20px !important;
@@ -62,6 +61,12 @@
       max-width: 522px;
       padding: 20px 0;
     }
+    form{
+      button{
+        background: #d0a666;
+        border: none;
+      }
+    }
   }
 
   .btn {
@@ -72,7 +77,26 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: none;
     border-radius: 50%;
     background: #d0a666;
+    span{
+      background-color: #d0a666;
+    }
+  }
+}
+
+.alert{
+  animation-name: alert;
+  animation-duration: 1s;
+  position: absolute;
+}
+
+@keyframes alert {
+  0%{
+    right: -100%;
+  }
+  100%{
+    right: 0;
   }
 }

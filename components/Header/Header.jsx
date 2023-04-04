@@ -2,7 +2,7 @@
 import s from "./Header.module.scss";
 import { motion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
-import cn from 'classnames'
+import cn from "classnames";
 import ModalConnect from "../Modal/ModalConnect";
 import Image from "next/image";
 
@@ -12,7 +12,7 @@ const Header = () => {
 
   const [showNav, setShowNav] = useState(false);
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   // Function - для header (при скролле)
   useEffect(() => {
@@ -26,9 +26,13 @@ const Header = () => {
 
   return (
     <>
-      <header className={isHeaderActive
-        ? cn(s.header_main, s.header_main_active)
-        : s.header_main}>
+      <header
+        className={
+          isHeaderActive
+            ? cn(s.header_main, s.header_main_active)
+            : s.header_main
+        }
+      >
         <div className={s.header_content}>
           <ul className={s.header_navbar}>
             <li>
@@ -48,10 +52,14 @@ const Header = () => {
 
           <img className={s.header_logo} src="./logo.png" alt="logo" />
           <div className={s.header_btn_burger}>
-            <button onClick={() => setShowModal(true)} className={s.header_btn}>Оставить заявку</button>
-            {
-              showModal == true ? <ModalConnect setShowModal={setShowModal} showModal={showModal} /> : ''
-            }
+            <button onClick={() => setShowModal(true)} className={s.header_btn}>
+              Оставить заявку
+            </button>
+            {showModal == true ? (
+              <ModalConnect setShowModal={setShowModal} showModal={showModal} />
+            ) : (
+              ""
+            )}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

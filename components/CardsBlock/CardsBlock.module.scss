@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .cards_main{
     display: grid;
     grid-template-columns: 30% 30% 30%;  
@@ -5,7 +6,7 @@
     gap: 40px;
     margin-top: 50px;
     font-weight: 100;
-    font-family: "SangBleu Empire Trial" !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 .cards_title{
     text-align: center;
@@ -13,7 +14,7 @@
     margin-top: 100px;
     h1{
         font-weight: 100;
-        font-family: "Ubuntu", sans-serif !important;
+        font-family: 'Montserrat', sans-serif !important;
     }
 }
 
