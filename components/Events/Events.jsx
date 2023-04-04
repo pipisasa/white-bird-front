@@ -10,6 +10,7 @@ const Events = () => {
                     ПОСЛЕДНИЕ
                     <br />
                     МЕРОПРИЯТИЯ
+                    <hr />
                 </h1>
             </div>
             <UnderSlider />

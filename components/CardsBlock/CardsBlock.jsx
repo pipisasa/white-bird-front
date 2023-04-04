@@ -20,7 +20,10 @@ const CardsBlock = () => {
   return (
     <div className="container">
       <div className={s.cards_title}>
-        <h1>Объекты</h1>
+        <h1>
+          Объекты
+          <hr />
+        </h1>
       </div>
       <div className={s.cards_main}>
         {dataSlide.map((card) => {

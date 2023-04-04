@@ -18,7 +18,10 @@ const News = () => {
     <div id="news" className={s.news_main}>
       <div className="container">
         <div className={s.title}>
-          <h1>Новости</h1>
+          <h1>
+            Новости
+            <hr />
+          </h1>
         </div>
         <Swiper
           effect={"coverflow"}
