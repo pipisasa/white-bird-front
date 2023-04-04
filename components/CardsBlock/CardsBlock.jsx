@@ -29,6 +29,7 @@ const CardsBlock = () => {
         {dataSlide.map((card) => {
           return (
             <Card
+            key={card.id}
               image={card.image}
               title={card.title}
               description={card.description}

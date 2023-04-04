@@ -56,9 +56,9 @@ const News = () => {
           modules={[Navigation, EffectCoverflow, Pagination]}
           className="sliderNews">
           {
-            photos.map(photo => {
+            photos.map((photo, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <img style={{
                     objectFit: "cover"
                   }} src={photo.image} alt='image' />

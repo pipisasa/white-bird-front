@@ -4,6 +4,7 @@ import cl from "classnames";
 import { motion } from "framer-motion";
 
 const Sidebar = ({ show, setShowNav }) => {
+
   return (
     <motion.div
       initial={{
