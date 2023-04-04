@@ -1,9 +1,22 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .Memories {
-  background-color: #062d62;
+  background: url('../../public/lol.jpeg');
+  background-attachment: fixed;
   padding-bottom: 45px;
   padding-left: 50px;
   padding-right: 50px;
+  position: relative;
+  .memories_block{
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 50%;
+    z-index: 0;
+  }
 }
 .container {
   max-width: 1200px;
@@ -15,6 +28,7 @@
   padding-bottom: 70px;
   text-align: center;
   .mem {
+    z-index: 1;
     .left {
       h1 {
         font-size: clamp(30px, 12vw, 53px);

@@ -4,6 +4,8 @@ import s from "./Memories.module.scss";
 const Memories = () => {
   return (
     <div id="aboutUs" className={s.Memories}>
+       <div className={s.memories_block}>
+      </div>
       <div className={s.container}>
         <div className={s.mem}>
           <div className={s.left}>
