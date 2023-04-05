@@ -1,7 +1,9 @@
 ﻿import React from "react";
 import s from "./Memories.module.scss";
 
+
 const Memories = () => {
+
   return (
     <div id="aboutUs" className={s.Memories}>
        <div className={s.memories_block}>
@@ -37,6 +39,7 @@ const Memories = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
