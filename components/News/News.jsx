@@ -71,6 +71,11 @@ const News = () => {
                   <h2>{photo.title}</h2>
                   <p>{photo.content}</p>
                   <h3>Дата: {photo.date}</h3>
+                  <button>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
+                      Новости
+                    </a>
+                  </button>
                 </div>
                 <div className={s.slide_content_opacity}></div>
               </SwiperSlide>
