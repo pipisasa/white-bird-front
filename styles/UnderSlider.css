@@ -11,6 +11,12 @@
   align-items: center;
 }
 
+.sliderNews .swiper-slide{
+  position: relative;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 .Under_slider .swiper-slide img {
   display: block;
   width: 100%;

@@ -6,14 +6,15 @@ import axios from "axios";
 import "swiper/css/effect-coverflow";
 
 const News = () => {
-  const [photos, setPhotos] = useState([])
+  const [photos, setPhotos] = useState([]);
   const getPhotos = async () => {
-    await axios.get('http://159.65.144.176/api/events/')
-      .then(res => setPhotos(res.data))
-  }
+    await axios
+      .get("http://159.65.144.176/api/events/")
+      .then((res) => setPhotos(res.data));
+  };
   useEffect(() => {
-    getPhotos(photos)
-  }, [photos])
+    getPhotos(photos);
+  }, [photos]);
   return (
     <div id="news" className={s.news_main}>
       <div className="container">
@@ -46,26 +47,35 @@ const News = () => {
             },
             600: {
               slidesPerView: 1,
-              effect: "coverflow"
+              effect: "coverflow",
             },
             960: {
               slidesPerView: 3,
-              effect: "coverflow"
-            }
+              effect: "coverflow",
+            },
           }}
           modules={[Navigation, EffectCoverflow, Pagination]}
-          className="sliderNews">
-          {
-            photos.map(photo => {
-              return (
-                <SwiperSlide>
-                  <img style={{
-                    objectFit: "cover"
-                  }} src={photo.image} alt='image' />
-                </SwiperSlide>
-              )
-            })
-          }
+          className="sliderNews"
+        >
+          {photos.map((photo) => {
+            return (
+              <SwiperSlide>
+                <img
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  src={photo.image}
+                  alt="image"
+                />
+                <div className={s.slide_content}>
+                  <h2>{photo.title}</h2>
+                  <p>{photo.content}</p>
+                  <h3>Дата: {photo.date}</h3>
+                </div>
+                <div className={s.slide_content_opacity}></div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

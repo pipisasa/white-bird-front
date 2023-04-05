@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .news_main {
   min-height: 100vh;
   background: #062d62;
   padding: 100px 0;
+  font-family: 'Montserrat', sans-serif !important;
   .title {
     h1 {
       font-size: clamp(30px, 12vw, 70px);
@@ -19,4 +21,31 @@
       }
     }
   }
+}
+.slide_content{
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  h2{
+    color: #fbdbac;
+  }
+}
+
+.slide_content_opacity{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
