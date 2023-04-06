@@ -100,3 +100,14 @@
     right: 0;
   }
 }
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .contact{
+    h2{
+      img{
+        width: 95% !important;
+        margin: 0 auto !important;
+      }
+    }
+  }
+}
