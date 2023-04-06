@@ -10,7 +10,7 @@ const CardsBlock = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://159.65.144.176/api/events/")
+        .get("https://durawka69.pythonanywhere.com/api/events/")
         .then((response) => setDataSlide(response.data));
     } catch (error) {
       console.log(error);

@@ -9,7 +9,7 @@ const News = () => {
   const [photos, setPhotos] = useState([]);
   const getPhotos = async () => {
     await axios
-      .get("http://159.65.144.176/api/events/")
+      .get("https://durawka69.pythonanywhere.com/api/posts/")
       .then((res) => setPhotos(res.data));
   };
   useEffect(() => {
@@ -64,7 +64,7 @@ const News = () => {
                   style={{
                     objectFit: "cover",
                   }}
-                  src={photo.image}
+                  src={photo.img}
                   alt="image"
                 />
                 <div className={s.slide_content}>

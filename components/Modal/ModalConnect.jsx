@@ -33,7 +33,7 @@ const ModalConnect = ({ showModal, setShowModal }) => {
 
   const userPost = async () => {
     await axios
-      .post("http://159.65.144.176/api/reqs/", {
+      .post("https://durawka69.pythonanywhere.com/api/reqs/", {
         full_name: info.full_name,
         country: info.country,
         city: info.city,
