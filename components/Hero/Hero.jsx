@@ -1,24 +1,21 @@
 ﻿import React from "react";
 import s from "./Hero.module.scss";
 import Image from "next/image";
-import img from '../../public/variant6.png'
+import img from "../../public/logoWhiteBird.png";
 
 const Hero = () => {
   return (
     <>
       <div className={s.hero}>
-        <div className="container">
-        <div className={s.hero_content}>
-          <div className={s.content_left}>
+        <div className={s.container}>
+          <div className={s.hero_content}>
             <Image src={img} alt="image" />
           </div>
-          <div className={s.content_right}>
-            <p>ЛМК</p>
-            <h2>БЕЛАЯ ПТИЦА</h2>
-            <hr />
-            <p>Литературно-музыкальный клуб </p>
-          </div>
-        </div>
+          <button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
+              Записаться
+            </a>
+          </button>
         </div>
       </div>
     </>

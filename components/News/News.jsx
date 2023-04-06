@@ -20,7 +20,7 @@ const News = () => {
       <div className="container">
         <div className={s.title}>
           <h1>
-            Новости
+            Анонсы
             <hr />
           </h1>
         </div>
@@ -73,7 +73,7 @@ const News = () => {
                   <h3>Дата: {photo.date}</h3>
                   <button>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
-                      Новости
+                      Принять участие
                     </a>
                   </button>
                 </div>

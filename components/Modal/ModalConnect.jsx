@@ -4,7 +4,7 @@ import Image from "next/image";
 import s from "./ModalConnect.module.scss";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Select } from "antd";
-import logo from "../../public/logo.png";
+import logo from "../../public/logo.svg";
 import axios from "axios";
 import { Alert } from "antd";
 

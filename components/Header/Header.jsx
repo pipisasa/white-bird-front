@@ -5,6 +5,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import cn from "classnames";
 import ModalConnect from "../Modal/ModalConnect";
 import Image from "next/image";
+import logo from "../../public/logo.svg";
+import logo1 from "../../public/logo1.svg";
 
 const Header = () => {
   // State - для header
@@ -24,6 +26,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const styleText = {
+    black: "black",
+    white: "white",
+  };
+
   return (
     <>
       <header
@@ -36,23 +43,61 @@ const Header = () => {
         <div className={s.header_content}>
           <ul className={s.header_navbar}>
             <li>
-              <a href="#aboutUs">О нас</a>
+              <a
+                href="#aboutUs"
+                style={{
+                  color: isHeaderActive ? styleText.white : styleText.black,
+                }}
+              >
+                О нас
+              </a>
             </li>
             <li>
-              <a href="#events">Мероприятия</a>
+              <a
+                href="#events"
+                style={{
+                  color: isHeaderActive ? styleText.white : styleText.black,
+                }}
+              >
+                Мероприятия
+              </a>
             </li>
             <li>
-              <a href="#news">Новости</a>
+              <a
+                href="#news"
+                style={{
+                  color: isHeaderActive ? styleText.white : styleText.black,
+                }}
+              >
+                Анонсы
+              </a>
             </li>
             <li>
-              <a href="#contact">Контакты</a>
+              <a
+                href="#footer"
+                style={{
+                  color: isHeaderActive ? styleText.white : styleText.black,
+                }}
+              >
+                Контакты
+              </a>
             </li>
           </ul>
           {/* header_navbar */}
 
-          <img className={s.header_logo} src="./logo.png" alt="logo" />
+          <Image
+            className={s.header_logo}
+            src={isHeaderActive ? logo1 : logo}
+            alt="logo"
+          />
           <div className={s.header_btn_burger}>
-            <button onClick={() => setShowModal(true)} className={s.header_btn}>
+            <button
+              style={{
+                color: isHeaderActive ? styleText.white : styleText.black,
+              }}
+              onClick={() => setShowModal(true)}
+              className={s.header_btn}
+            >
               Оставить заявку
             </button>
             {showModal == true ? (
@@ -67,9 +112,9 @@ const Header = () => {
               className={s.burger_menu}
             >
               <div className={s.nav_icon} onClick={() => setShowNav(!showNav)}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
+                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
+                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
               </div>
             </motion.div>
             {/* burger_menu */}

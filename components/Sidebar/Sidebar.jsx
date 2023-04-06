@@ -75,7 +75,7 @@ const Sidebar = ({ show, setShowNav }) => {
           whileHover={{ scale: 1.1, transition: "0.4s" }}
         >
           <a href="#news" onClick={() => setShowNav(false)}>
-            Новости
+            Анонсы
           </a>
         </motion.li>
         <motion.li
