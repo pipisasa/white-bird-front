@@ -80,6 +80,10 @@
 @media screen and (max-width: 425px) {
   .Memories{
     padding: 100px 0 100px 0 !important;
+    background-attachment: initial !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: -100px 0;
   }
   .container {
     max-width: 90%;
