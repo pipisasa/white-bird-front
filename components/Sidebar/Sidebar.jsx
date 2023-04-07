@@ -84,7 +84,7 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.2 }}
           whileHover={{ scale: 1.1, transition: "0" }}
         >
-          <a href="#contact" onClick={() => setShowNav(false)}>
+          <a href="#footer" onClick={() => setShowNav(false)}>
             Контакты
           </a>
         </motion.li>
