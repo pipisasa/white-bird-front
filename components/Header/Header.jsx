@@ -59,7 +59,7 @@ const Header = () => {
                   color: isHeaderActive ? styleText.white : styleText.black,
                 }}
               >
-                Мероприятия
+                Новости
               </a>
             </li>
             <li>
