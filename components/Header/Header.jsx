@@ -44,6 +44,7 @@ const Header = () => {
           <ul className={s.header_navbar}>
             <li>
               <a
+              className={s.nav_link}
                 href="#aboutUs"
                 style={{
                   color: styleText.white
@@ -54,6 +55,7 @@ const Header = () => {
             </li>
             <li>
               <a
+               className={s.nav_link}
                 href="#events"
                 style={{
                   color: styleText.white
@@ -64,6 +66,7 @@ const Header = () => {
             </li>
             <li>
               <a
+               className={s.nav_link}
                 href="#news"
                 style={{
                   color: styleText.white
@@ -74,6 +77,7 @@ const Header = () => {
             </li>
             <li>
               <a
+               className={s.nav_link}
                 href="#footer"
                 style={{
                   color: styleText.white

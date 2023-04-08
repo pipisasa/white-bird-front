@@ -1,26 +1,30 @@
 ﻿import React from "react";
 import s from "./Memories.module.scss";
 
-
 const Memories = () => {
-
   return (
     <div id="aboutUs" className={s.Memories}>
-       <div className={s.memories_block}>
-      </div>
+      <div className={s.memories_block}></div>
       <div className={s.container}>
         <div className={s.mem}>
           <div className={s.left}>
-            <h1>
-              «Белая птица» существует под этим названием с 2015 года. Он
-              собрал в своих рядах поэтов, музыкантов, бардов Кыргызстана.
-            </h1>
+            <h2>
+              «Белая птица»
+              <br />
+            </h2>
+            <h4>
+              {" "}
+              существует под этим названием с 2015 года. Он собрал в своих рядах
+              поэтов, музыкантов, бардов Кыргызстана.
+            </h4>
           </div>
-          <hr style={{
-            width: "80%",
-            margin: "30px auto",
-            border: "1px solid #d0a666"
-          }}/>
+          <hr
+            style={{
+              width: "80%",
+              margin: "30px 0px",
+              border: "1px solid #d0a666",
+            }}
+          />
           <div className={s.right}>
             <p>
               Созданию клуба предшествовали три фестиваля «Красное Яблоко» (КЯ),
@@ -39,7 +43,6 @@ const Memories = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

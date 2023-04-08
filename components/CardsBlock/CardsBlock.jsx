@@ -20,16 +20,16 @@ const CardsBlock = () => {
   return (
     <div className="container">
       <div className={s.cards_title}>
-        <h1>
-          Объекты
+        <h2>
+          Прошедшие мероприятия
           <hr />
-        </h1>
+        </h2>
       </div>
       <div className={s.cards_main}>
         {dataSlide.map((card) => {
           return (
             <Card
-            key={card.id}
+              key={card.id}
               image={card.image}
               title={card.title}
               description={card.description}

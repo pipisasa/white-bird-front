@@ -29,10 +29,8 @@ const Footer = () => {
         </div>
 
         <div className={s.footer_content}>
-          <h5>Адрес:</h5>
+          <h5>Соц сети:</h5>
 
-          <p>г. Бишкек, пр. Чынгыза</p>
-          <p>Айтматова 95/2</p>
           <p>belyaptisa@gmail.com</p>
         </div>
       </div>
