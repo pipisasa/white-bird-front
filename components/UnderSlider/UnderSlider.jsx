@@ -37,7 +37,6 @@ export default function UnderSLider() {
   dataSlide.map((slide) => {
     gallery.push({ src: slide.image });
   });
-  console.log(gallery);
   return (
     <>
       <Swiper

@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import s from "./Hero.module.scss";
 import Image from "next/image";
-import img from "../../public/logoWhiteBird.png";
+import img from "../../public/whiteBirdBack.svg";
 
 const Hero = () => {
   return (

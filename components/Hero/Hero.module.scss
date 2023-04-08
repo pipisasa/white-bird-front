@@ -1,7 +1,7 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .hero {
   height: 100vh;
-  background-color: white;
+  background-color: #447ec4;
   .container {
     height: 100%;
     width: 90%;
@@ -33,11 +33,14 @@
       }
     }
     button:hover {
-      background-color: #007aff;
+      background-color: white;
+      a{
+        color: #c3862b;
+      }
     }
   }
   .hero_content {
-    height: 80%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,9 +60,10 @@
     }
   }
   .hero_content {
-    height: 36% !important;
-    width: 100% !important;
+    height: 60% !important;
+    width: 180% !important;
   }
+
 }
 
 @media screen and (min-width: 551px) and (max-width: 900px) {
@@ -72,6 +76,6 @@
   }
   .hero_content {
     height: 60% !important;
-    width: 100% !important;
+    width: 140% !important;
   }
 }

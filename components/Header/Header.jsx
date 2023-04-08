@@ -46,7 +46,7 @@ const Header = () => {
               <a
                 href="#aboutUs"
                 style={{
-                  color: isHeaderActive ? styleText.white : styleText.black,
+                  color: styleText.white
                 }}
               >
                 О нас
@@ -56,7 +56,7 @@ const Header = () => {
               <a
                 href="#events"
                 style={{
-                  color: isHeaderActive ? styleText.white : styleText.black,
+                  color: styleText.white
                 }}
               >
                 Новости
@@ -66,7 +66,7 @@ const Header = () => {
               <a
                 href="#news"
                 style={{
-                  color: isHeaderActive ? styleText.white : styleText.black,
+                  color: styleText.white
                 }}
               >
                 Анонсы
@@ -76,7 +76,7 @@ const Header = () => {
               <a
                 href="#footer"
                 style={{
-                  color: isHeaderActive ? styleText.white : styleText.black,
+                  color: styleText.white
                 }}
               >
                 Контакты
@@ -87,13 +87,13 @@ const Header = () => {
 
           <Image
             className={s.header_logo}
-            src={isHeaderActive ? logo1 : logo}
+            src={logo1 }
             alt="logo"
           />
           <div className={s.header_btn_burger}>
             <button
               style={{
-                color: isHeaderActive ? styleText.white : styleText.black,
+                color: styleText.white
               }}
               onClick={() => setShowModal(true)}
               className={s.header_btn}
@@ -112,9 +112,9 @@ const Header = () => {
               className={s.burger_menu}
             >
               <div className={s.nav_icon} onClick={() => setShowNav(!showNav)}>
-                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
-                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
-                <span style={{background: isHeaderActive ? styleText.white : styleText.black}} ></span>
+                <span style={{background: styleText.white}} ></span>
+                <span style={{background: styleText.white}} ></span>
+                <span style={{background: styleText.white}} ></span>
               </div>
             </motion.div>
             {/* burger_menu */}
