@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .footer {
   width: 100%;
   background: #062d62;
@@ -14,7 +14,7 @@
     padding-right: 30px;
     justify-content: space-between;
     .footer_content {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-style: normal;
       font-weight: 300;
       font-size: 15px;
@@ -23,7 +23,7 @@
       color: #fff;
       text-align: left;
       h5 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 19px;
@@ -91,7 +91,7 @@
       color: #fff;
     }
     h4 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -103,18 +103,18 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 510px) {
-  .footer_content{
+  .footer_content {
     width: 50%;
     text-align: center !important;
   }
-  .footer_content:last-child{
+  .footer_content:last-child {
     width: 100%;
     padding-top: 20px;
   }
-  .low{
-    div:first-child{
+  .low {
+    div:first-child {
       width: 40%;
-      p{
+      p {
         text-align: start;
       }
     }
@@ -122,11 +122,11 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
-  .footer_content{
-    h5{
+  .footer_content {
+    h5 {
       font-size: 15px;
     }
-    p{
+    p {
       font-size: 13px;
     }
   }
