@@ -103,6 +103,9 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 510px) {
+  .footer_contents {
+    justify-content: center !important;
+  }
   .footer_content {
     width: 50%;
     text-align: center !important;

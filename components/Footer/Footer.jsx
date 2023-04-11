@@ -16,9 +16,9 @@ const Footer = () => {
         <div className={s.footer_content}>
           <h5>Связаться:</h5>
 
-          <p>0709849789</p>
-          <p>0709849789</p>
-          <p>0709849789</p>
+          <p>Телеграмм - @lunaraigry</p>
+          <p>Телефон номер - +996777040272</p>
+          
         </div>
 
         <div className={s.footer_content}>
