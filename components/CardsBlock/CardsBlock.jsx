@@ -21,7 +21,7 @@ const CardsBlock = () => {
     <div className="container">
       <div className={s.cards_title}>
         <h2>
-          Прошедшие мероприятия
+          Прошедшие <br /> мероприятия
           <hr />
         </h2>
       </div>

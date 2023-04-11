@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .news_main {
   min-height: 100vh;
   background: #062d62;
   padding: 100px 0;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
   .title {
     h1 {
       font-size: clamp(30px, 12vw, 70px);
       line-height: 110%;
       text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif !important;
+      font-family: "Montserrat", sans-serif !important;
       font-weight: 100;
       color: white;
       padding: 60px 0 60px 0;
       text-align: center;
-      hr{
+      hr {
         border: 2px solid #d0a666;
         width: 20%;
         margin: 20px auto;
@@ -22,7 +22,7 @@
     }
   }
 }
-.slide_content{
+.slide_content {
   position: absolute;
   height: 30%;
   width: 100%;
@@ -32,7 +32,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  p{
+  transition: 1s;
+  p {
     font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
@@ -40,10 +41,10 @@
     width: 80%;
     margin: 0 auto;
   }
-  h2{
+  h2 {
     color: #fbdbac;
   }
-  button{
+  button {
     width: 150px;
     height: 30px;
     border-radius: 10px;
@@ -55,10 +56,10 @@
     margin: 0 auto;
     transition: 1s;
   }
-  button:hover{
+  button:hover {
     background-color: white;
   }
-  a{
+  a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,12 +68,29 @@
     text-decoration: none;
     color: white;
   }
-  a:hover{
+  a:hover {
     color: #c3862b;
   }
 }
 
-.slide_content_opacity{
+.slide{
+  transition: 1s;
+}
+
+.slide:hover {
+  .slide_content {
+    height: 100%;
+    p {
+      white-space: normal;
+      text-overflow: initial;
+    }
+  }
+  .slide_content_opacity{
+    opacity: 0.6;
+  }
+}
+
+.slide_content_opacity {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -83,11 +101,24 @@
   right: 0;
   bottom: 0;
   left: 0;
+  transition: 1s;
+}
+
+@media screen and (min-width: 0px) and (max-width: 360px)  {
+  .slide_content {
+    height: 40%;
+    p{
+      font-size: 13px;
+    }
+}
 }
 
 
-@media screen and (min-width: 0px) and (max-width: 600px) {
-  .slide_content{
+@media screen and (min-width: 361px) and (max-width: 600px) {
+  .slide_content {
     height: 40%;
+    p{
+      font-size: 15px;
+    }
   }
 }
