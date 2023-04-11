@@ -12,13 +12,6 @@ const Footer = () => {
   return (
     <div id="footer" className={s.footer}>
       <div className={s.footer_contents}>
-        <div className={s.footer_content}>
-          <h5>График:</h5>
-
-          <p>пн-пт: 9:00 – 18:30</p>
-          <p>сб: 10:00 – 16:00</p>
-          <p>вс: выходной</p>
-        </div>
 
         <div className={s.footer_content}>
           <h5>Связаться:</h5>
