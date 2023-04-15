@@ -5,8 +5,7 @@ import s from "./ModalConnect.module.scss";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import logo from "../../public/logo.svg";
-import axios from "axios";
-import { Alert } from "antd";
+import { baseAxios } from "../../utils/baseAxios";
 
 const ModalConnect = ({ showModal, setShowModal }) => {
   const [info, setInfo] = useState({
@@ -32,8 +31,8 @@ const ModalConnect = ({ showModal, setShowModal }) => {
   const [axiosStatus, setAxiosStatus] = useState(null);
 
   const userPost = async () => {
-    await axios
-      .post("https://durawka69.pythonanywhere.com/api/reqs/", {
+    await baseAxios
+      .post("/reqs/", {
         full_name: info.full_name,
         country: info.country,
         city: info.city,
@@ -248,14 +247,14 @@ const ModalConnect = ({ showModal, setShowModal }) => {
               политике конфиденциальности
             </p>
             {axiosStatus === true ? (
-            <p style={{ color: "green", fontSize: '20px' }}>Данные были успешно отправлены!</p>
-          ) : axiosStatus === false ? (
-            <p style={{ color: "red", fontSize: '20px' }}>Заполните все поля корректно!</p>
-          ) : (
-            ""
-          )}
+              <p style={{ color: "green", fontSize: '20px' }}>Данные были успешно отправлены!</p>
+            ) : axiosStatus === false ? (
+              <p style={{ color: "red", fontSize: '20px' }}>Заполните все поля корректно!</p>
+            ) : (
+              ""
+            )}
           </div>
-          
+
           <form onSubmit={handleSubmit}>
             <button
               onClick={() => (axiosStatus === true ? handleCancel() : "")}

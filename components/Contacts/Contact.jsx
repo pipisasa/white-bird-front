@@ -3,7 +3,7 @@ import s from "./Contact.module.scss";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import { useState } from "react";
-import axios from "axios";
+import { baseAxios } from "../../utils/baseAxios";
 
 const Contact = () => {
   const [info, setInfo] = useState({
@@ -29,8 +29,8 @@ const Contact = () => {
   const [axiosStatus, setAxiosStatus] = useState(null);
 
   const userPost = async () => {
-    await axios
-      .post("https://durawka69.pythonanywhere.com/api/reqs/", {
+    await baseAxios
+      .post("/reqs/", {
         full_name: info.full_name,
         country: info.country,
         city: info.city,

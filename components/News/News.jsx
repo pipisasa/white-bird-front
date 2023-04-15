@@ -5,12 +5,14 @@ import { Navigation, EffectCoverflow, Pagination } from "swiper";
 import axios from "axios";
 import "swiper/css/effect-coverflow";
 import format from "date-fns/format";
+import { baseAxios } from "../../utils/baseAxios";
+import { MEDIA_URL } from "../../utils/constants";
 
 const News = () => {
   const [photos, setPhotos] = useState([]);
   const getPhotos = async () => {
-    await axios
-      .get("https://durawka69.pythonanywhere.com/api/posts/")
+    await baseAxios
+      .get("/posts/")
       .then((res) => setPhotos(res.data));
   };
   useEffect(() => {
@@ -76,7 +78,7 @@ const News = () => {
                   style={{
                     objectFit: "cover",
                   }}
-                  src={photo.img}
+                  src={MEDIA_URL + photo.img}
                   alt="image"
                 />
                 <div className={s.slide_content}>
@@ -84,7 +86,10 @@ const News = () => {
                   <p>{photo.content}</p>
                   <h3>Дата создания анонса: {photo.formattedDate}</h3>
                   <button>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferer"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
                       Принять участие
                     </a>
                   </button>

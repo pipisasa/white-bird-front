@@ -1,7 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import axios from "axios";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -17,6 +16,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { baseAxios } from "../../utils/baseAxios";
+import { MEDIA_URL } from "../../utils/constants";
 
 export default function UnderSLider() {
   const [dataSlide, setDataSlide] = useState([]);
@@ -24,8 +25,8 @@ export default function UnderSLider() {
 
   useEffect(() => {
     try {
-      axios
-        .get("https://durawka69.pythonanywhere.com/api/events/")
+      baseAxios
+        .get("/events/")
         .then((response) => setDataSlide(response.data));
     } catch (error) {
       console.log(error);
@@ -61,7 +62,7 @@ export default function UnderSLider() {
       >
         {dataSlide.map((slide, i) => (
           <SwiperSlide key={i} onClick={() => setOpen(true)}>
-            <img src={slide.image} alt="slide_img" />
+            <img src={MEDIA_URL + slide.image} alt="slide_img" />
           </SwiperSlide>
         ))}
       </Swiper>

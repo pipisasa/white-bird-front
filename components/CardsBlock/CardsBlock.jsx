@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import s from "./CardsBlock.module.scss";
-import axios from "axios";
 import Card from "../Card/Card";
+import { baseAxios } from "../../utils/baseAxios";
+import { MEDIA_URL } from "../../utils/constants";
 
 const CardsBlock = () => {
   const [dataSlide, setDataSlide] = useState([]);
@@ -9,8 +10,8 @@ const CardsBlock = () => {
 
   useEffect(() => {
     try {
-      axios
-        .get("https://durawka69.pythonanywhere.com/api/events/")
+      baseAxios
+        .get("/events/")
         .then((response) => setDataSlide(response.data));
     } catch (error) {
       console.log(error);
@@ -30,7 +31,7 @@ const CardsBlock = () => {
           return (
             <Card
               key={card.id}
-              image={card.image}
+              image={MEDIA_URL + card.image}
               title={card.title}
               description={card.description}
             />
