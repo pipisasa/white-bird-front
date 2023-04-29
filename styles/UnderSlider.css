@@ -2,6 +2,10 @@
   height: 80vh !important;
 }
 
+.UnderSlider .awssld__box{
+  cursor: pointer;
+}
+
 .UnderSlider .awssld__box video{
   width: 100% !important;
   height: 100% !important;

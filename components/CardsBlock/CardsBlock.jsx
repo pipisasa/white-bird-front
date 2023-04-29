@@ -22,7 +22,7 @@ const CardsBlock = () => {
     <div className="container">
       <div className={s.cards_title}>
         <h2>
-          Прошедшие <br /> мероприятия
+          МЕРОПРИЯТИЯ
           <hr />
         </h2>
       </div>
