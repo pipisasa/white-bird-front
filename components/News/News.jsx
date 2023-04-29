@@ -10,24 +10,29 @@ import { MEDIA_URL } from "../../utils/constants";
 
 const News = () => {
   const [photos, setPhotos] = useState([]);
-  const getPhotos = async () => {
-    await baseAxios
-      .get("/posts/")
-      .then((res) => setPhotos(res.data));
-  };
+  const [currentId, setCurrentId] = useState(0);
+
   useEffect(() => {
-    getPhotos(photos);
-  }, []);
-
+    try{
+      baseAxios.get('/posts/')
+      .then(data => setPhotos(data.data))
+    } catch(error){
+      console.log(error);
+    }
+  }, [])
+  
   const formatDate = (date) => {
-    return format(new Date(date), "dd.MM.yyyy")
-  }
+    return format(new Date(date), "dd.MM.yyyy");
+  };
 
-  const formattedDates = photos.map(photo => ({
+  const formattedDates = photos.map((photo) => ({
     ...photo,
-    formattedDate: formatDate(photo.date)
-  }))
+    formattedDate: formatDate(photo.date),
+  }));
 
+  const initialSlideContent = (id) => {
+    setCurrentId(id.realIndex);
+  };
 
   return (
     <div id="news" className={s.news_main}>
@@ -43,6 +48,7 @@ const News = () => {
           navigation={true}
           grabCursor={true}
           centeredSlides={true}
+          onSlideChange={initialSlideContent}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
@@ -78,27 +84,32 @@ const News = () => {
                   style={{
                     objectFit: "cover",
                   }}
-                  src={MEDIA_URL + photo.img}
+                  src={photo.img}
                   alt="image"
                 />
-                <div className={s.slide_content}>
-                  <h2>{photo.title}</h2>
-                  <p>{photo.content}</p>
-                  <h3>Дата создания анонса: {photo.formattedDate}</h3>
-                  <button>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferer"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
-                      Принять участие
-                    </a>
-                  </button>
-                </div>
-                <div className={s.slide_content_opacity}></div>
               </SwiperSlide>
             );
           })}
         </Swiper>
+        <div>
+          {formattedDates.map((item, id) => {
+            return (
+              <div
+                style={{ display: currentId === id ? "flex" : "none" }}
+                className={s.slide_content}
+              >
+                <h2>{item.title}</h2>
+                <p>{item.content}</p>
+                <h3>Дата создания анонса: {item.formattedDate}</h3>
+                <button>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
+                    Принять участие
+                  </a>
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

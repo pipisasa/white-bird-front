@@ -31,7 +31,7 @@ const CardsBlock = () => {
           return (
             <Card
               key={card.id}
-              image={MEDIA_URL + card.image}
+              image={card.image}
               title={card.title}
               description={card.description}
             />

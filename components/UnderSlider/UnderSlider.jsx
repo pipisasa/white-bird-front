@@ -6,9 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
 import { FreeMode, Navigation } from "swiper";
-
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
@@ -17,61 +15,90 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { baseAxios } from "../../utils/baseAxios";
-import { MEDIA_URL } from "../../utils/constants";
+import { Autoplay } from "swiper";
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+import Video from "yet-another-react-lightbox/plugins/video";
+import { sl } from "date-fns/locale";
 
 export default function UnderSLider() {
   const [dataSlide, setDataSlide] = useState([]);
   const [open, setOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [galleryVideos, setGalleryVideos] = useState([]);
 
   useEffect(() => {
     try {
-      baseAxios
-        .get("/events/")
-        .then((response) => setDataSlide(response.data));
+      baseAxios.get("/gallery/").then((data) => {
+        const images = data.data.gallery.images;
+        const videos = data.data.gallery.videos;
+        setDataSlide([...images, ...videos]);
+      });
     } catch (error) {
       console.log(error);
     }
   }, []);
 
-  const gallery = [];
+  useEffect(() => {
+    if (dataSlide.length > 0) {
+      const galleryImg = []
+      const galleryMp4 = []
+      dataSlide.forEach((slide) => {
+        if(slide.img){
+          galleryImg.push({src: slide.img})
+        } else if(slide.video){
+          galleryMp4.push({src: slide.video})
+        }
+      });
+      setGalleryImages(galleryImg)
+      setGalleryVideos(galleryMp4)
+    }
+  }, [dataSlide]);
 
-  dataSlide.map((slide) => {
-    gallery.push({ src: slide.image });
-  });
+  console.log(galleryImages);
+
   return (
     <>
-      <Swiper
-        loop={true}
-        centeredSlides={true}
-        spaceBetween={30}
-        freeMode={true}
-        initialSlide={2}
-        slidesPerView={1}
-        pagination={true}
-        navigation={true}
-        modules={[FreeMode, Navigation, Pagination]}
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          600: {
-            slidesPerView: "1.5",
-          },
-        }}
-        className="Under_slider"
-      >
+      <AwesomeSlider trnsitionDelay={0} className="UnderSlider">
         {dataSlide.map((slide, i) => (
-          <SwiperSlide key={i} onClick={() => setOpen(true)}>
-            <img src={MEDIA_URL + slide.image} alt="slide_img" />
-          </SwiperSlide>
+          <div
+            key={i}
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
+            {slide.img ? (
+              <div>
+                <img src={slide.img} alt="slide_img" />
+              </div>
+            ) : (
+              <div>
+                <video autoPlay muted loop preload="auto" controls={false}>
+                  <source src={slide.video} type="video/mp4" />
+                </video>
+              </div>
+            )}
+          </div>
         ))}
-      </Swiper>
-
+      </AwesomeSlider>
       <Lightbox
-        plugins={[Zoom, Slideshow, Fullscreen, Thumbnails]}
+        plugins={[Zoom, Slideshow, Fullscreen, Thumbnails, Video]}
         open={open}
         close={() => setOpen(false)}
-        slides={gallery}
+        slides={[
+          {
+            type: "video",
+            width: 1280,
+            height: 720,
+            sources: galleryVideos,
+          },
+          {
+            type: "image",
+            width: 1280,
+            height: 720,
+            src: galleryImages.map(slide => slide.src)
+          },
+        ]}
       />
     </>
   );
