@@ -44,10 +44,10 @@ const Header = () => {
           <ul className={s.header_navbar}>
             <li>
               <a
-              className={s.nav_link}
+                className={s.nav_link}
                 href="#aboutUs"
                 style={{
-                  color: styleText.white
+                  color: styleText.white,
                 }}
               >
                 О нас
@@ -55,10 +55,10 @@ const Header = () => {
             </li>
             <li>
               <a
-               className={s.nav_link}
+                className={s.nav_link}
                 href="#events"
                 style={{
-                  color: styleText.white
+                  color: styleText.white,
                 }}
               >
                 Галерея
@@ -66,10 +66,10 @@ const Header = () => {
             </li>
             <li>
               <a
-               className={s.nav_link}
+                className={s.nav_link}
                 href="#news"
                 style={{
-                  color: styleText.white
+                  color: styleText.white,
                 }}
               >
                 Анонсы
@@ -77,10 +77,10 @@ const Header = () => {
             </li>
             <li>
               <a
-               className={s.nav_link}
+                className={s.nav_link}
                 href="#footer"
                 style={{
-                  color: styleText.white
+                  color: styleText.white,
                 }}
               >
                 Контакты
@@ -89,26 +89,22 @@ const Header = () => {
           </ul>
           {/* header_navbar */}
 
-          <Image
-            className={s.header_logo}
-            src={logo1 }
-            alt="logo"
-          />
+          <Image className={s.header_logo} src={logo1} alt="logo" />
           <div className={s.header_btn_burger}>
-            <button
-              style={{
-                color: styleText.white
-              }}
-              onClick={() => setShowModal(true)}
-              className={s.header_btn}
+            <form
+              action="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"
+              target="_blank"
             >
-              Оставить заявку
-            </button>
-            {showModal == true ? (
-              <ModalConnect setShowModal={setShowModal} showModal={showModal} />
-            ) : (
-              ""
-            )}
+              <button
+                style={{
+                  color: styleText.white,
+                }}
+                onClick={() => setShowModal(true)}
+                className={s.header_btn}
+              >
+                Оставить заявку
+              </button>
+            </form>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -116,9 +112,9 @@ const Header = () => {
               className={s.burger_menu}
             >
               <div className={s.nav_icon} onClick={() => setShowNav(!showNav)}>
-                <span style={{background: styleText.white}} ></span>
-                <span style={{background: styleText.white}} ></span>
-                <span style={{background: styleText.white}} ></span>
+                <span style={{ background: styleText.white }}></span>
+                <span style={{ background: styleText.white }}></span>
+                <span style={{ background: styleText.white }}></span>
               </div>
             </motion.div>
             {/* burger_menu */}

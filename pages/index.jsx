@@ -152,12 +152,11 @@ II Фестиваль «Красное яблоко», также организ
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
       <Hero />
+      <News />
       <Memories />
       <CardsBlock />
       <Events />
       <BirdVideo />
-      <News />
-      <Contact />
     </>
   );
 }
