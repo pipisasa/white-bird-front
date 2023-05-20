@@ -30,15 +30,15 @@ export default function UnderSLider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await baseAxios.get("/gallery/");
+        const response = (await baseAxios.get("/gallery/"));
         const images = response.data.gallery.images;
         const videos = response.data.gallery.videos;
         setDataSlide([...images, ...videos]);
       } catch (error) {
         console.log(error);
       }
-    }
-    fetchData()
+    };
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -56,6 +56,8 @@ export default function UnderSLider() {
       setGalleryVideos(galleryMp4);
     }
   }, [dataSlide]);
+
+  console.log(dataSlide);
 
   return (
     <>
@@ -92,9 +94,7 @@ export default function UnderSLider() {
                   type: "image",
                   width: 1280,
                   height: 720,
-                  src: galleryImages.map((image) => {
-                    return image.src;
-                  }),
+                  src: galleryImages.map((item) => item.src),
                 },
                 {
                   type: "video",
@@ -103,7 +103,7 @@ export default function UnderSLider() {
                   sources: galleryVideos,
                 },
               ]
-            : ""
+            : []
         }
       />
     </>

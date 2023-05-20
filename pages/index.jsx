@@ -156,6 +156,7 @@ II Фестиваль «Красное яблоко», также организ
       <Memories />
       <Events />
       <BirdVideo />
+      <Contact />
     </>
   );
 }

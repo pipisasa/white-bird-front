@@ -6,111 +6,109 @@ import { useState } from "react";
 import { baseAxios } from "../../utils/baseAxios";
 
 const Contact = () => {
-  const [info, setInfo] = useState({
-    full_name: "",
-    country: "",
-    city: "",
-    email: "",
-    phone_number: "",
-    role: "",
-  });
+  // const [info, setInfo] = useState({
+  //   full_name: "",
+  //   country: "",
+  //   city: "",
+  //   email: "",
+  //   phone_number: "",
+  //   role: "",
+  // });
 
-  const [isFullName, setIsFullName] = useState(true);
-  const [isNotValid, setIsNotValid] = useState({
-    full_name: false,
-    country: false,
-    city: false,
-    email: false,
-    phone_number: false,
-    role: false,
-  });
-  const [emailError, setEmailError] = useState(false);
-  const [phoneNumberError, setPhoneNumberError] = useState(false);
-  const [axiosStatus, setAxiosStatus] = useState(null);
+  // const [isFullName, setIsFullName] = useState(true);
+  // const [isNotValid, setIsNotValid] = useState({
+  //   full_name: false,
+  //   country: false,
+  //   city: false,
+  //   email: false,
+  //   phone_number: false,
+  //   role: false,
+  // });
+  // const [emailError, setEmailError] = useState(false);
+  // const [phoneNumberError, setPhoneNumberError] = useState(false);
+  // const [axiosStatus, setAxiosStatus] = useState(null);
 
-  const userPost = async () => {
-    await baseAxios
-      .post("/reqs/", {
-        full_name: info.full_name,
-        country: info.country,
-        city: info.city,
-        email: info.email,
-        phone_number: info.phone_number,
-        role: info.role,
-      })
-      .then((res) => {
-        if (res.status === "200" || "201") {
-          setAxiosStatus(true);
-        } else {
-          setAxiosStatus(false);
-        }
-      })
-      .catch((error) => {
-        if (error) {
-          setAxiosStatus(false);
-        }
-      });
-  };
+  // const userPost = async () => {
+  //   await baseAxios
+  //     .post("/reqs/", {
+  //       full_name: info.full_name,
+  //       country: info.country,
+  //       city: info.city,
+  //       email: info.email,
+  //       phone_number: info.phone_number,
+  //       role: info.role,
+  //     })
+  //     .then((res) => {
+  //       if (res.status === "200" || "201") {
+  //         setAxiosStatus(true);
+  //       } else {
+  //         setAxiosStatus(false);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       if (error) {
+  //         setAxiosStatus(false);
+  //       }
+  //     });
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let errors = {
-      full_name: false,
-      country: false,
-      city: false,
-      email: false,
-      phone_number: false,
-      role: false,
-    };
-    if (!/^([^\s]+\s[^\s]+.*)$/.test(info.full_name)) {
-      setIsFullName(false);
-      !userPost();
-    } else {
-      setIsFullName(true);
-    }
-    if (info.full_name.trim() === "") {
-      errors = { ...errors, full_name: true };
-    }
-    if (info.country.trim() === "") {
-      errors = { ...errors, country: true };
-    }
-    if (info.city.trim() === "") {
-      errors = { ...errors, city: true };
-    }
-    if (info.email.trim() === "") {
-      errors = { ...errors, email: true };
-    }
-    if (info.phone_number.trim() === "") {
-      errors = { ...errors, phone_number: true };
-    }
-    if (info.role.trim() === "") {
-      errors = { ...errors, role: true };
-    }
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(info.email)) {
-      setEmailError(false);
-    } else {
-      setEmailError(true);
-    }
-    if (info.phone_number.length < 10) {
-      setPhoneNumberError(true);
-    }
-    setIsNotValid(errors);
-    userPost();
-    setInfo({
-      full_name: "",
-      country: "",
-      city: "",
-      email: "",
-      phone_number: "",
-      role: "",
-    });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   let errors = {
+  //     full_name: false,
+  //     country: false,
+  //     city: false,
+  //     email: false,
+  //     phone_number: false,
+  //     role: false,
+  //   };
+  //   if (!/^([^\s]+\s[^\s]+.*)$/.test(info.full_name)) {
+  //     setIsFullName(false);
+  //     !userPost();
+  //   } else {
+  //     setIsFullName(true);
+  //   }
+  //   if (info.full_name.trim() === "") {
+  //     errors = { ...errors, full_name: true };
+  //   }
+  //   if (info.country.trim() === "") {
+  //     errors = { ...errors, country: true };
+  //   }
+  //   if (info.city.trim() === "") {
+  //     errors = { ...errors, city: true };
+  //   }
+  //   if (info.email.trim() === "") {
+  //     errors = { ...errors, email: true };
+  //   }
+  //   if (info.phone_number.trim() === "") {
+  //     errors = { ...errors, phone_number: true };
+  //   }
+  //   if (info.role.trim() === "") {
+  //     errors = { ...errors, role: true };
+  //   }
+  //   if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(info.email)) {
+  //     setEmailError(false);
+  //   } else {
+  //     setEmailError(true);
+  //   }
+  //   if (info.phone_number.length < 10) {
+  //     setPhoneNumberError(true);
+  //   }
+  //   setIsNotValid(errors);
+  //   userPost();
+  //   setInfo({
+  //     full_name: "",
+  //     country: "",
+  //     city: "",
+  //     email: "",
+  //     phone_number: "",
+  //     role: "",
+  //   });
+  // };
   return (
     <div className={s.contact}>
-      <h2>
-        Связаться с нами
-      </h2>
-      <div className={s.contact_desc}>
+      <h2>Связаться с нами</h2>
+      {/* <div className={s.contact_desc}>
         <div>
           <input
             className={s.input_contact}
@@ -242,12 +240,13 @@ const Contact = () => {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
 
-      <form onSubmit={handleSubmit}>
-        <button
-          className={s.btn}
-        >
+      <form
+        action="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"
+        target="_blank"
+      >
+        <button className={s.btn}>
           <ArrowRightOutlined style={{ color: "white", fontSize: "35px" }} />
         </button>
       </form>
