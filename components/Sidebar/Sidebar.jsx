@@ -4,7 +4,6 @@ import cl from "classnames";
 import { motion } from "framer-motion";
 
 const Sidebar = ({ show, setShowNav }) => {
-
   return (
     <motion.div
       initial={{
@@ -59,16 +58,6 @@ const Sidebar = ({ show, setShowNav }) => {
           </a>
         </motion.li>
         <motion.li
-          initial={{ y: -40, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 1.5 }}
-          whileHover={{ scale: 1.1, transition: "0.4s" }}
-        >
-          <a href="#events" onClick={() => setShowNav(false)}>
-            Галерея
-          </a>
-        </motion.li>
-        <motion.li
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.4 }}
@@ -76,6 +65,26 @@ const Sidebar = ({ show, setShowNav }) => {
         >
           <a href="#news" onClick={() => setShowNav(false)}>
             Анонсы
+          </a>
+        </motion.li>
+        <motion.li
+          initial={{ y: -40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1.5 }}
+          whileHover={{ scale: 1.1, transition: "0.4s" }}
+        >
+          <a href="#events" onClick={() => setShowNav(false)}>
+            Мероприятия
+          </a>
+        </motion.li>
+        <motion.li
+          initial={{ y: -40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1.5 }}
+          whileHover={{ scale: 1.1, transition: "0.4s" }}
+        >
+          <a href="#gallery" onClick={() => setShowNav(false)}>
+            Галерея
           </a>
         </motion.li>
         <motion.li

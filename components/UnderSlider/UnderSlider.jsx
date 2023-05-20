@@ -28,38 +28,38 @@ export default function UnderSLider() {
   const [galleryVideos, setGalleryVideos] = useState([]);
 
   useEffect(() => {
-    try {
-      baseAxios.get("/gallery/").then((data) => {
-        const images = data.data.gallery.images;
-        const videos = data.data.gallery.videos;
+    const fetchData = async () => {
+      try {
+        const response = await baseAxios.get("/gallery/");
+        const images = response.data.gallery.images;
+        const videos = response.data.gallery.videos;
         setDataSlide([...images, ...videos]);
-      });
-    } catch (error) {
-      console.log(error);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fetchData()
   }, []);
 
   useEffect(() => {
     if (dataSlide.length > 0) {
-      const galleryImg = []
-      const galleryMp4 = []
+      const galleryImg = [];
+      const galleryMp4 = [];
       dataSlide.forEach((slide) => {
-        if(slide.img){
-          galleryImg.push({src: slide.img})
-        } else if(slide.video){
-          galleryMp4.push({src: slide.video})
+        if (slide.img) {
+          galleryImg.push({ src: slide.img });
+        } else if (slide.video) {
+          galleryMp4.push({ src: slide.video });
         }
       });
-      setGalleryImages(galleryImg)
-      setGalleryVideos(galleryMp4)
+      setGalleryImages(galleryImg);
+      setGalleryVideos(galleryMp4);
     }
   }, [dataSlide]);
 
-  console.log(galleryImages);
-
   return (
     <>
-      <AwesomeSlider trnsitionDelay={0} className="UnderSlider">
+      <AwesomeSlider transitionDelay={0} className="UnderSlider">
         {dataSlide.map((slide, i) => (
           <div
             key={i}
@@ -85,20 +85,26 @@ export default function UnderSLider() {
         plugins={[Zoom, Slideshow, Fullscreen, Thumbnails, Video]}
         open={open}
         close={() => setOpen(false)}
-        slides={[
-          {
-            type: "video",
-            width: 1280,
-            height: 720,
-            sources: galleryVideos,
-          },
-          {
-            type: "image",
-            width: 1280,
-            height: 720,
-            src: galleryImages.map(slide => slide.src)
-          },
-        ]}
+        slides={
+          galleryImages && galleryVideos !== 0
+            ? [
+                {
+                  type: "image",
+                  width: 1280,
+                  height: 720,
+                  src: galleryImages.map((image) => {
+                    return image.src;
+                  }),
+                },
+                {
+                  type: "video",
+                  width: 1280,
+                  height: 720,
+                  sources: galleryVideos,
+                },
+              ]
+            : ""
+        }
       />
     </>
   );

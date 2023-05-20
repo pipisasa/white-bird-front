@@ -1,2 +1,2 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://localhost:8000/api';
-export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || 'http://localhost:8000/media';
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://white-bird-back-production.up.railway.app/api';
+export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || 'http://res.cloudinary.com/dhwktim6c';

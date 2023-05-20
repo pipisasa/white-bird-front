@@ -56,23 +56,34 @@ const Header = () => {
             <li>
               <a
                 className={s.nav_link}
-                href="#events"
-                style={{
-                  color: styleText.white,
-                }}
-              >
-                Галерея
-              </a>
-            </li>
-            <li>
-              <a
-                className={s.nav_link}
                 href="#news"
                 style={{
                   color: styleText.white,
                 }}
               >
                 Анонсы
+              </a>
+            </li>
+            <li>
+              <a
+                className={s.nav_link}
+                href="#events"
+                style={{
+                  color: styleText.white,
+                }}
+              >
+                Мероприятия
+              </a>
+            </li>
+            <li>
+              <a
+                className={s.nav_link}
+                href="#gallery"
+                style={{
+                  color: styleText.white,
+                }}
+              >
+                Галерея
               </a>
             </li>
             <li>
@@ -88,8 +99,9 @@ const Header = () => {
             </li>
           </ul>
           {/* header_navbar */}
-
-          <Image className={s.header_logo} src={logo1} alt="logo" />
+          <div className={s.header_logo}>
+            <Image src={logo1} alt="logo" />
+          </div>
           <div className={s.header_btn_burger}>
             <form
               action="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"

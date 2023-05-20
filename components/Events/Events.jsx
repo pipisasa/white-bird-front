@@ -5,7 +5,7 @@ import s from './Events.module.scss'
 const Events = () => {
     return (
         <>
-            <div id='events' className={s.events}>
+            <div id='gallery' className={s.events}>
                 <h1>
                     ГАЛЕРЕЯ
                     <hr />

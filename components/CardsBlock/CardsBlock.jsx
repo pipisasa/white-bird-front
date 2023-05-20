@@ -20,7 +20,7 @@ const CardsBlock = () => {
 
   return (
     <div className="container">
-      <div className={s.cards_title}>
+      <div id="events" className={s.cards_title}>
         <h2>
           МЕРОПРИЯТИЯ
           <hr />

@@ -13,14 +13,16 @@ const News = () => {
   const [currentId, setCurrentId] = useState(0);
 
   useEffect(() => {
-    try{
-      baseAxios.get('/posts/')
-      .then(data => setPhotos(data.data))
-    } catch(error){
-      console.log(error);
+    const data = async() => {
+      try {
+        await baseAxios.get("/posts/").then((data) => setPhotos(data.data));
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, [])
-  
+    data()
+  }, []);
+
   const formatDate = (date) => {
     return format(new Date(date), "dd.MM.yyyy");
   };
@@ -101,11 +103,16 @@ const News = () => {
                 <h2>{item.title}</h2>
                 <p>{item.content}</p>
                 <h3>Дата создания анонса: {item.formattedDate}</h3>
-                <button>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing">
-                    Принять участие
-                  </a>
-                </button>
+                <div className={s.news_btn}>
+                  <button>
+                    <a
+                      target="_blank"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"
+                    >
+                      Принять участие
+                    </a>
+                  </button>
+                </div>
               </div>
             );
           })}

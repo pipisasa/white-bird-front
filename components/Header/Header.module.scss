@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .header_main_active {
   background-color: #052f61;
   transition: 1s;
@@ -16,16 +16,15 @@
     height: 91px;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
     align-items: center;
     .header_navbar {
       display: flex;
-      gap: 40px;
+      gap: 25px;
       li {
         list-style: none;
-        .nav_link{
+        .nav_link {
           text-decoration: none;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-style: normal;
           font-weight: 300;
           font-size: 17px;
@@ -40,10 +39,14 @@
     }
   }
   .header_logo {
-    width: 130px;
-    height: 90px;
+    display: flex;
+    justify-content: start;
+    img {
+      width: 130px;
+      height: 90px;
+    }
   }
-  
+
   .header_btn_burger {
     display: flex;
     align-items: center;
@@ -51,7 +54,7 @@
       margin-right: 65px;
       text-align: left;
       height: 38px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-style: normal;
       font-weight: 330;
       font-size: 16px;
@@ -68,7 +71,7 @@
         text-shadow: 1px 1px 2px rgb(6, 2, 2);
       }
     }
-    
+
     .nav_icon {
       width: 32px;
       height: 24px;
@@ -170,7 +173,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .header_logo{
+  .header_logo {
     width: 90px !important;
   }
   .header_main {
