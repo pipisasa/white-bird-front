@@ -34,3 +34,6 @@ html {
 .ant-btn{
   display: none;
 }
+.yarl__thumbnails_contain_image{
+  display: none !important;
+}

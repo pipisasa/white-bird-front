@@ -30,7 +30,7 @@ export default function UnderSLider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = (await baseAxios.get("/gallery/"));
+        const response = await baseAxios.get("/gallery/");
         const images = response.data.gallery.images;
         const videos = response.data.gallery.videos;
         setDataSlide([...images, ...videos]);
@@ -57,7 +57,7 @@ export default function UnderSLider() {
     }
   }, [dataSlide]);
 
-  console.log(dataSlide);
+  console.log(galleryVideos);
 
   return (
     <>
@@ -84,6 +84,33 @@ export default function UnderSLider() {
         ))}
       </AwesomeSlider>
       <Lightbox
+        
+        plugins={[Zoom, Slideshow, Fullscreen, Thumbnails, Video]}
+        open={open}
+        close={() => setOpen(false)}
+        slides={
+          galleryImages && galleryVideos !== 0
+            ? [
+                ...galleryImages.map((image) => ({
+                  type: "image",
+                  width: 1280,
+                  height: 720,
+                  src: image.src,
+                })),
+                ...galleryVideos.map((video) => ({
+                  type: "video",
+                  width: 1280,
+                  height: 720,
+                  sources: [{ src: video.src }],
+                  poster: "", 
+                  autoplay: true, 
+                  controls: true,
+                })),
+              ]
+            : []
+        }
+      />
+      {/* <Lightbox3
         plugins={[Zoom, Slideshow, Fullscreen, Thumbnails, Video]}
         open={open}
         close={() => setOpen(false)}
@@ -105,7 +132,7 @@ export default function UnderSLider() {
               ]
             : []
         }
-      />
+      /> */}
     </>
   );
 }
