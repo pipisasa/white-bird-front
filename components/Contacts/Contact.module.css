@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.contact h2 {
+  margin: 0 auto;
+  font-size: clamp(30px, 12vw, 70px);
+  line-height: 110%;
+  text-transform: uppercase;
+  max-width: 600px;
+  font-weight: 100;
+  font-family: "Montserrat", sans-serif;
+}
+.contact .contact_desc {
+  display: block;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.contact .contact_desc .desc {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 150%;
+  color: #7a7a7a;
+  max-width: 346px;
+  margin: 30px auto;
+}
+.contact .contact_desc .input_contact {
+  text-align: center;
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px !important;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  border: none;
+  background: transparent;
+  width: 100%;
+  max-width: 522px;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-bottom: 1.5px solid #d0a666;
+}
+.contact .contact_desc .input_contact_select {
+  text-align: center;
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px !important;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  border: none;
+  background: transparent;
+  width: 100%;
+  max-width: 522px;
+  padding: 20px 0;
+}
+.contact .contact_desc form button {
+  background: #d0a666;
+  border: none;
+}
+.contact .btn {
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background: #d0a666;
+  margin-top: 40px;
+}
+.contact .btn span {
+  background-color: #d0a666;
+}
+
+.alert {
+  animation-name: alert;
+  animation-duration: 1s;
+  position: absolute;
+}
+
+@keyframes alert {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}/*# sourceMappingURL=Contact.module.css.map */

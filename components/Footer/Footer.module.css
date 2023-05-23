@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.footer {
+  width: 100%;
+  background: #062d62;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+.footer .footer_contents {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-between;
+}
+.footer .footer_contents .footer_content {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 160%;
+  text-align: left;
+  color: #fff;
+  text-align: left;
+}
+.footer .footer_contents .footer_content h5 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 160%;
+  color: #d0a666;
+  margin-bottom: 5px;
+}
+.footer .social {
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 50px;
+}
+.footer .social .social_content {
+  display: flex;
+  justify-content: space-around;
+}
+.footer .social .social_content .social_block {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgb(208, 166, 102);
+}
+.footer .linear {
+  height: 1px;
+  color: gray;
+  max-width: 95%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.footer .low {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 95%;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+.footer .low p {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 160%;
+  text-align: right;
+  color: #858484;
+  text-transform: uppercase;
+}
+.footer .low span {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 100%;
+  color: #fff;
+}
+.footer .low h4 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media screen and (min-width: 0px) and (max-width: 510px) {
+  .footer_contents {
+    justify-content: center !important;
+  }
+  .footer_content {
+    width: 50%;
+    text-align: center !important;
+  }
+  .footer_content:last-child {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .low div:first-child {
+    width: 40%;
+  }
+  .low div:first-child p {
+    text-align: start;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .footer_content h5 {
+    font-size: 15px;
+  }
+  .footer_content p {
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=Footer.module.css.map */

@@ -13,14 +13,14 @@ const News = () => {
   const [currentId, setCurrentId] = useState(0);
 
   useEffect(() => {
-    const data = async() => {
+    const data = async () => {
       try {
         await baseAxios.get("/posts/").then((data) => setPhotos(data.data));
       } catch (error) {
         console.log(error);
       }
-    }
-    data()
+    };
+    data();
   }, []);
 
   const formatDate = (date) => {
@@ -79,43 +79,47 @@ const News = () => {
           modules={[Navigation, EffectCoverflow, Pagination]}
           className="sliderNews"
         >
-          {formattedDates.map((photo, i) => {
-            return (
-              <SwiperSlide className={s.slide} key={i}>
-                <img
-                  style={{
-                    objectFit: "cover",
-                  }}
-                  src={photo.img}
-                  alt="image"
-                />
-              </SwiperSlide>
-            );
-          })}
+          {formattedDates !== 0
+            ? formattedDates.map((photo, i) => {
+                return (
+                  <SwiperSlide className={s.slide} key={i}>
+                    <img
+                      style={{
+                        objectFit: "cover",
+                      }}
+                      src={photo.img}
+                      alt="image"
+                    />
+                  </SwiperSlide>
+                );
+              })
+            : ""}
         </Swiper>
         <div>
-          {formattedDates.map((item, id) => {
-            return (
-              <div
-                style={{ display: currentId === id ? "flex" : "none" }}
-                className={s.slide_content}
-              >
-                <h2>{item.title}</h2>
-                <p>{item.content}</p>
-                <h3>Дата создания анонса: {item.formattedDate}</h3>
-                <div className={s.news_btn}>
-                  <button>
-                    <a
-                      target="_blank"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"
-                    >
-                      Принять участие
-                    </a>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+          {formattedDates !== 0
+            ? formattedDates.map((item, id) => {
+                return (
+                  <div
+                    style={{ display: currentId === id ? "flex" : "none" }}
+                    className={s.slide_content}
+                  >
+                    <h2>{item.title}</h2>
+                    <p>{item.content}</p>
+                    <h3>Дата создания анонса: {item.formattedDate}</h3>
+                    <div className={s.news_btn}>
+                      <button>
+                        <a
+                          target="_blank"
+                          href="https://docs.google.com/forms/d/e/1FAIpQLSc9Vx8XcU5DKWSfCUtFy9i1gsRvTTjUHRM5coY7sSCTBvNwtQ/viewform?usp=sharing"
+                        >
+                          Принять участие
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })
+            : ""}
         </div>
       </div>
     </div>

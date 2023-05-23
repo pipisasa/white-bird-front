@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.Memories {
+  background: url("../../public/lol.jpeg");
+  background-attachment: fixed;
+  padding-bottom: 45px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  position: relative;
+}
+.Memories .memories_block {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 50%;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 90px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 70px;
+  text-align: left;
+}
+.container .mem {
+  z-index: 1;
+}
+.container .mem .left {
+  margin-bottom: 40px;
+}
+.container .mem .left h2 {
+  font-size: clamp(30px, 12vw, 53px);
+  line-height: 110%;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  color: #fff;
+}
+.container .mem .left h4 {
+  font-size: clamp(30px, 12vw, 30px);
+  margin-top: 20px;
+  line-height: 110%;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  color: #fff;
+}
+.container .mem .right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.container .mem .right p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 180%;
+  color: #fff;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+  .container .mem .left h2 {
+    font-size: 45px;
+  }
+  .container .mem .left h4 {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .Memories {
+    padding: 100px 0 100px 0 !important;
+    background-attachment: initial !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: -100px 0;
+  }
+  .container {
+    max-width: 90%;
+  }
+  .container .mem {
+    gap: 20px;
+  }
+  .container .mem .left h2 {
+    font-size: 30px;
+  }
+  .container .mem .left h4 {
+    font-size: 20px;
+  }
+  .container .mem .right p {
+    font-size: 17px;
+  }
+}/*# sourceMappingURL=Memories.module.css.map */

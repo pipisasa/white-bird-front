@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.card_main {
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: 1s;
+  cursor: pointer;
+  transition: 1s;
+}
+.card_main:hover {
+  border: 1px solid #a7834c;
+  transition: 1s;
+}
+.card_main .card_img {
+  height: 500px;
+  width: 100%;
+}
+.card_main .card_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card_main .card_title {
+  font-size: clamp(30px, 12vw, 37px);
+  line-height: 110%;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 100;
+  color: #2e2e2e;
+  padding-top: 20px;
+}
+.card_main .card_description {
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 140%;
+  color: #000000;
+  padding-top: 20px;
+}
+.card_main .card_description_ellipse {
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 140%;
+  color: #000000;
+  padding-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}/*# sourceMappingURL=Card.module.css.map */
